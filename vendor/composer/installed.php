@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v11.5.0',
-        'version' => '11.5.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '9170932f45cc65755bc1d55d84fe8b0ddd0753cd',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -110,6 +110,15 @@
             'install_path' => __DIR__ . '/../fruitcake/php-cors',
             'aliases' => array(),
             'reference' => '3d158f36e7875e2f040f37bc0573956240a5a38b',
+            'dev_requirement' => false,
+        ),
+        'giggsey/libphonenumber-for-php-lite' => array(
+            'pretty_version' => '8.13.52',
+            'version' => '8.13.52.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../giggsey/libphonenumber-for-php-lite',
+            'aliases' => array(),
+            'reference' => '9d48e4e112d4a24d46a5fb7c65d000ca3d3faac1',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -386,12 +395,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v11.5.0',
-            'version' => '11.5.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '9170932f45cc65755bc1d55d84fe8b0ddd0753cd',
             'dev_requirement' => false,
         ),
         'laravel/pail' => array(
@@ -678,6 +687,15 @@
             'aliases' => array(),
             'reference' => '153d0531b9f7e883c5053160cad6dd5ac28140b3',
             'dev_requirement' => true,
+        ),
+        'propaganistas/laravel-phone' => array(
+            'pretty_version' => '5.3.3',
+            'version' => '5.3.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../propaganistas/laravel-phone',
+            'aliases' => array(),
+            'reference' => '2172362ae5714ddc397d9df96a44b82bd125631a',
+            'dev_requirement' => false,
         ),
         'psr/clock' => array(
             'pretty_version' => '1.0.0',

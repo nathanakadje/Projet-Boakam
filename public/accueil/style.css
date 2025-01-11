@@ -1554,6 +1554,81 @@ img {
   .palatin-tabs-content .tab-content h6 {
     font-size: 18px; }
 
+
+
+    .modal-backdrop {
+      z-index: 100; /* Placez-le en dessous d'autres éléments si nécessaire */
+  }
+  
+
+  #reservationModal {
+    z-index: 1051;
+}
+
+/* Styles pour la modale */
+/* #reservationModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+} */
+
+/* Styles pour le formulaire */
+#reservationForm {
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#reservationForm .form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#reservationForm .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+#reservationForm label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* #reservationForm button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.3s ease;
+} */
+
+#reservationForm button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Styles pour le bouton de réservation */
+/* .btn.palatin-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+} */
+
+.btn.palatin-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */

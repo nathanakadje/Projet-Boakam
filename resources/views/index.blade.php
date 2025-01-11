@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
     <title>The Palatin - Hotel &amp; Resort Template</title>
 
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="./accueil/img/core-img/favicon.ico">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="./accueil/style.css">
 
@@ -114,8 +117,78 @@
 
                                 <!-- Button -->
                                 <div class="menu-btn">
-                                    <a href="#" class="btn palatin-btn"> Reservation</a>
+                                    <a href="#" class="btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal"> Reservation</a>
                                 </div>
+            
+
+<!-- Modal Pour le formulaire -->
+<div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reservationModalLabel">Réservation de chambre</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                @if(session('success'))
+          <div class="alert alert-success">
+              {{ session('success') }}
+          </div>
+      @endif
+                <form id="reservationForm" action="{{ route('reservations.store') }}" method="POST" >
+                    @csrf
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom complet</label>
+                        <input type="text" class="form-control" id="name" name="name" >
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" >
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Téléphone</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" >
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    {{-- <div class="mb-3">
+                        <label for="room_type" class="form-label">Type de chambre</label>
+                        <select class="form-control" id="room_type" name="room_type" style="width: 100%;" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="simple">Chambre Simple</option>
+                            <option value="double">Chambre Double</option>
+                        </select>
+                    </div> --}}
+
+                    <div class="mb-3">
+                        <label for="check_in" class="form-label">Date d'arrivée</label>
+                        <input type="date" class="form-control" id="check_in" name="check_in" >
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="check_out" class="form-label">Date de départ</label>
+                        <input type="date" class="form-control" id="check_out" name="check_out" >
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Réserver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Pour le formulaire -->
+
 
                             </div>
                             <!-- Nav End -->
@@ -454,7 +527,7 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
-                        <a href="#" class="d-block mb-5"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="#" class="d-block mb-5"><img src="./accueil/img/core-img/logo.png" alt=""></a>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
                     </div>
                 </div>
@@ -463,7 +536,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-widget-area mt-50">
                         <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="img/bg-img/footer-map.png" alt="">
+                        <img src="./accueil/img/bg-img/footer-map.png" alt="">
                     </div>
                 </div>
 
@@ -490,18 +563,111 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area End ##### -->
+    <!-- jQuery (nécessaire pour Bootstrap) -->
+<!-- Bootstrap JS Bundle -->
 
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="./accueil/js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="./accueil/js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="./accueil/js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="./accueil/js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="./accueil/js/active.js"></script>
+<!-- ##### All Javascript Script ##### -->
+<!-- jQuery-2.2.4 js -->
+<script src="./accueil/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- Popper js -->
+<script src="./accueil/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="./accueil/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="./accueil/js/plugins/plugins.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<!-- Active js -->
+<script src="./accueil/js/active.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script>
+ 
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Réinitialiser les messages d'erreur avant une nouvelle soumission
+    document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+    document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+    // Récupération des données du formulaire
+    const formData = Object.fromEntries(new FormData(this));
+
+    fetch('{{ route("reservations.store") }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return response.json().then(errors => { throw errors; });
+        }
+    })
+    .then(data => {
+        if (data.success) {
+            toastr.success('Chambre réservée avec succès!');
+            $('#reservationModal').modal('hide');
+            this.reset();
+        }
+    })
+    .catch(errors => {
+        if (errors.errors) {
+            // Gestion des erreurs de validation
+            Object.keys(errors.errors).forEach(key => {
+                const field = document.querySelector(`[name="${key}"]`);
+                if (field) {
+                    // Ajouter la classe `is-invalid`
+                    field.classList.add('is-invalid');
+
+                    // Ajouter le message d'erreur sous le champ
+                    const feedback = field.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = errors.errors[key][0];
+                    }
+                }
+            });
+        } else {
+            // Afficher une alerte générique en cas d'erreur serveur
+            toastr.error('Erreur lors de la réservation.');
+        }
+    });
+});
+
+//     document.getElementById('reservationForm').addEventListener('submit', function(e) {
+//     e.preventDefault();
+    
+//     fetch('{{ route("reservations.store") }}', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+//         },
+//         body: JSON.stringify(Object.fromEntries(new FormData(this)))
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if(data.success) {
+//             toastr.success('Chambre réservée avec succès!');
+//             $('#reservationModal').modal('hide');
+//             this.reset();
+//         } else {
+//             toastr.error('Erreur lors de la réservation');
+            
+//         }
+//     })
+//     .catch(error => {
+//         toastr.error('Erreur lors de la réservation2');
+//     });
+// });
+// ************************************************************************
+
+    </script>
 </body>
 
 </html>
