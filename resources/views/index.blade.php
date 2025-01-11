@@ -138,21 +138,24 @@
       @endif
                 <form id="reservationForm" action="{{ route('reservations.store') }}" method="POST" >
                     @csrf
+                    <div class="alert alert-danger d-none" id="errorLegend" role="alert">
+                        En cas d'erreur, veuillez nous contacter au 0779741238.
+                    </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nom complet</label>
-                        <input type="text" class="form-control" id="name" name="name" >
+                        {{-- <label for="name" class="form-label">Nom complet</label> --}}
+                        <input type="text" class="form-control" id="name" placeholder="Nom et Prénom" name="name" >
                         <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" >
+                        {{-- <label for="email" class="form-label">Email</label> --}}
+                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" >
                         <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Téléphone</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" >
+                        {{-- <label for="phone" class="form-label">Téléphone</label> --}}
+                        <input type="tel" class="form-control" id="phone" placeholder=" Contact Ex: 07xxxxxxxx" name="phone" >
                         <div class="invalid-feedback"></div>
                     </div>
                     {{-- <div class="mb-3">
@@ -590,7 +593,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     // Réinitialiser les messages d'erreur avant une nouvelle soumission
     document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
     document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-
+        
+    // Masquer la légende d'erreur au début
+    const errorLegend = document.getElementById('errorLegend');
+    errorLegend.classList.add('d-none');
     // Récupération des données du formulaire
     const formData = Object.fromEntries(new FormData(this));
 
@@ -636,6 +642,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             // Afficher une alerte générique en cas d'erreur serveur
             toastr.error('Erreur lors de la réservation.');
         }
+          // Afficher la légende en cas d’erreur
+          errorLegend.classList.remove('d-none');
     });
 });
 

@@ -119,6 +119,8 @@
                                 <div class="menu-btn">
                                     <a href="#" class="btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal"> Reservation</a>
                                 </div>
+         
+
 <!-- Modal Pour le formulaire -->
 <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -129,26 +131,32 @@
             </div>
             <div class="modal-body">
 
-                {{-- @if(session('success'))
+                @if(session('success'))
           <div class="alert alert-success">
               {{ session('success') }}
           </div>
-      @endif --}}
+      @endif
                 <form id="reservationForm" action="{{ route('reservations.store') }}" method="POST" >
                     @csrf
+                    <div class="alert alert-danger d-none" id="errorLegend" role="alert">
+                        En cas d'erreur, veuillez nous contacter au 0779741238.
+                    </div>
                     <div class="mb-3">
-                        {{-- <label for="name" class="form-label">Nom</label> --}}
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Nom et Prénom" required>
+                        {{-- <label for="name" class="form-label">Nom complet</label> --}}
+                        <input type="text" class="form-control" id="name" placeholder="Nom et Prénom" name="name" >
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="mb-3">
                         {{-- <label for="email" class="form-label">Email</label> --}}
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Email" name="email" >
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="mb-3">
                         {{-- <label for="phone" class="form-label">Téléphone</label> --}}
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Contact" required>
+                        <input type="tel" class="form-control" id="phone" placeholder=" Contact Ex: 07xxxxxxxx" name="phone" >
+                        <div class="invalid-feedback"></div>
                     </div>
                     {{-- <div class="mb-3">
                         <label for="room_type" class="form-label">Type de chambre</label>
@@ -161,12 +169,14 @@
 
                     <div class="mb-3">
                         <label for="check_in" class="form-label">Date d'arrivée</label>
-                        <input type="date" class="form-control" id="check_in" name="check_in" required>
+                        <input type="date" class="form-control" id="check_in" name="check_in" >
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <div class="mb-3">
                         <label for="check_out" class="form-label">Date de départ</label>
-                        <input type="date" class="form-control" id="check_out" name="check_out" required>
+                        <input type="date" class="form-control" id="check_out" name="check_out" >
+                        <div class="invalid-feedback"></div>
                     </div>
 
 
@@ -181,6 +191,7 @@
 </div>
 
 <!-- Modal Pour le formulaire -->
+
 
                             </div>
                             <!-- Nav End -->
@@ -574,29 +585,89 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     
 
     <script>
-         document.getElementById('reservationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+//          document.getElementById('reservationForm').addEventListener('submit', function(e) {
+//     e.preventDefault();
     
+//     fetch('{{ route("reservations.store") }}', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+//         },
+//         body: JSON.stringify(Object.fromEntries(new FormData(this)))
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if(data.success) {
+//             toastr.success('Chambre réservée avec succès!');
+//             $('#reservationModal').modal('hide');
+//             this.reset();
+//         } else {
+//             toastr.error('Erreur lors de la réservation');
+//         }
+//     })
+//     .catch(error => {
+//         toastr.error('Erreur lors de la réservation2');
+//     });
+// });
+
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Réinitialiser les messages d'erreur avant une nouvelle soumission
+    document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+    document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        
+    // Masquer la légende d'erreur au début
+    const errorLegend = document.getElementById('errorLegend');
+    errorLegend.classList.add('d-none');
+    // Récupération des données du formulaire
+    const formData = Object.fromEntries(new FormData(this));
+
     fetch('{{ route("reservations.store") }}', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
-        body: JSON.stringify(Object.fromEntries(new FormData(this)))
+        body: JSON.stringify(formData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return response.json().then(errors => { throw errors; });
+        }
+    })
     .then(data => {
-        if(data.success) {
+        if (data.success) {
             toastr.success('Chambre réservée avec succès!');
             $('#reservationModal').modal('hide');
             this.reset();
-        } else {
-            toastr.error('Erreur lors de la réservation');
         }
     })
-    .catch(error => {
-        toastr.error('Erreur lors de la réservation2');
+    .catch(errors => {
+        if (errors.errors) {
+            // Gestion des erreurs de validation
+            Object.keys(errors.errors).forEach(key => {
+                const field = document.querySelector(`[name="${key}"]`);
+                if (field) {
+                    // Ajouter la classe `is-invalid`
+                    field.classList.add('is-invalid');
+
+                    // Ajouter le message d'erreur sous le champ
+                    const feedback = field.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = errors.errors[key][0];
+                    }
+                }
+            });
+        } else {
+            // Afficher une alerte générique en cas d'erreur serveur
+            toastr.error('Erreur lors de la réservation.');
+        }
+          // Afficher la légende en cas d’erreur
+          errorLegend.classList.remove('d-none');
     });
 });
     </script>

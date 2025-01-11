@@ -16,7 +16,7 @@ class ReservationController extends Controller
       $rules = [
         'name' => 'required|string|max:255',
         'email' => 'required|email',
-        'phone' => 'required|string|min:9',
+        'phone' => 'required|string|min:10',
         'check_in' => 'required|date|after_or_equal:today',
         'check_out' => 'required|date|after_or_equal:check_in',
     ];
@@ -30,7 +30,7 @@ class ReservationController extends Controller
         'email.email' => 'L\'adresse email doit être valide.',
         'phone.required' => 'Le numéro de téléphone est obligatoire.',
         'phone.string' => 'Le numéro de téléphone doit être une chaîne de caractères.',
-        'phone.min' => 'Le numéro de téléphone doit contenir au moins 9 caractères.',
+        'phone.min' => 'Le numéro de téléphone doit contenir au moins 10 caractères.',
         'check_in.required' => 'La date d\'arrivée est obligatoire.',
         'check_in.date' => 'La date d\'arrivée doit être une date valide.',
         'check_in.after_or_equal' => 'La date d\'arrivée doit être aujourd\'hui ou après.',
