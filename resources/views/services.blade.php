@@ -74,8 +74,8 @@
                                     <li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="index">Home</a></li>
-                                                <li><a href="./accueil/about-us.html">About Us</a></li>
+                                                <li><a href="index">HÔTEL</a></li>
+                                                <li><a href="canaan">Canaan Plage</a></li>
                                                 <li><a href="./accueil/services.html">Services</a></li>
                                                 <li><a href="./accueil/rooms.html">Rooms</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>
@@ -289,7 +289,7 @@
                     <div class="service-intro-text mb-100">
                         <div class="section-heading">
                             <div class="line-"></div>
-                            <h2>Amazing Services</h2>
+                            <h2>Services Exceptionnels</h2>
                         </div>
                         <p>Profitez d'un séjour confortable à petit prix, avec un accueil chaleureux et un service impeccable. Idéal pour les voyageurs en quête de simplicité et de convivialité. Réservez dès maintenant et vivez une expérience authentique et chaleureuse.</p>
                         <a href="#" class="btn palatin-btn mt-50">Read More</a>
@@ -358,7 +358,7 @@
                 <!-- Single Core Feature Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-core-feature mb-100">
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/013.jpg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/0013.JPG);"></div>
                         <!-- Content -->
                         <div class="feature-content">
                             <i class="icon-sunset"></i>
@@ -371,7 +371,7 @@
                 <!-- Single Core Feature Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-core-feature mb-100">
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/14.jpg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/014.JPG);"></div>
                         <!-- Content -->
                         <div class="feature-content">
                             <i class="icon-island"></i>

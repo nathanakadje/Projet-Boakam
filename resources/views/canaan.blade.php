@@ -111,7 +111,7 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <li><a href="./accueil/services.html">Services</a></li>
+                                    <li><a href="canaanservices">Services</a></li>
                                     <li><a href="./accueil/contact.html">Contact</a></li>
                                 </ul>
 
