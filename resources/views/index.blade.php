@@ -74,8 +74,8 @@
                                     <li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="./accueil/index.html">Home</a></li>
-                                                <li><a href="./accueil/about-us.html">About Us</a></li>
+                                                <li><a href="index">HÔTEL</a></li>
+                                                <li><a href="canaan">Canaan Plage</a></li>
                                                 <li><a href="./accueil/services.html">Services</a></li>
                                                 <li><a href="./accueil/rooms.html">Rooms</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>

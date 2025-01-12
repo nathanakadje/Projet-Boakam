@@ -18,6 +18,10 @@ class VueController extends Controller
     {
         return view('index');
     } 
+    public function canaanservice()
+    {
+        return view('services');
+    } 
 
     // public function store(Request $request)
     // {

@@ -62,7 +62,7 @@
                                     <li><a href="./accueil/about-us.html">About Us</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="./accueil/index.html">Home</a></li>
+                                            <li><a href="index">Home</a></li>
                                             <li><a href="./accueil/about-us.html">About Us</a></li>
                                             <li><a href="./accueil/services.html">Services</a></li>
                                             <li><a href="./accueil/rooms.html">Rooms</a></li>
@@ -74,8 +74,8 @@
                                     <li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="./accueil/index.html">Home</a></li>
-                                                <li><a href="./accueil/about-us.html">About Us</a></li>
+                                                <li><a href="index">HÔTEL</a></li>
+                                                <li><a href="canaan">Canaan Plage</a></li>
                                                 <li><a href="./accueil/services.html">Services</a></li>
                                                 <li><a href="./accueil/rooms.html">Rooms</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>
@@ -83,7 +83,7 @@
                                                 <li><a href="./accueil/elements.html">Elements</a></li>
                                             </ul>
                                             <ul class="single-mega cn-col-4">
-                                                <li><a href="./accueil/index.html">Home</a></li>
+                                                <li><a href="./accueil/index.html">Residences</a></li>
                                                 <li><a href="./accueil/about-us.html">About Us</a></li>
                                                 <li><a href="./accueil/services.html">Services</a></li>
                                                 <li><a href="./accueil/rooms.html">Rooms</a></li>
@@ -210,7 +210,7 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(./accueil/img/bg-img/bg-01.jpeg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(./accueil/img/bg-img/003.JPG);"></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-9">
@@ -380,7 +380,7 @@
     <!-- ##### About Us Area End ##### -->
 
     <!-- ##### Pool Area Start ##### -->
-    <section class="pool-area section-padding-100 bg-img bg-fixed" style="background-image: url(./accueil/img/bg-img/04.png);">
+    <section class="pool-area section-padding-100 bg-img bg-fixed" style="background-image: url(./accueil/img/bg-img/004.jpeg);">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-7">
@@ -436,36 +436,36 @@
             <div class="row justify-content-center">
 
                 <!-- Single Rooms Area -->
-                {{-- <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="100ms">
                         <!-- Thumbnail -->
                         <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/1.jpg);"></div>
                         <!-- Price -->
                         <p class="price-from">From $150/night</p>
                         <!-- Rooms Text -->
-                        <div class="rooms-text">
+                        {{-- <div class="rooms-text">
                             <div class="line"></div>
                             <h4>Deluxe Room</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
-                        </div>
+                        </div> --}}
                         <!-- Book Room -->
                         <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
                     </div>
-                </div> --}}
+                </div> 
 
                 <!-- Single Rooms Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/8.jpg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/08.jpeg);"></div>
                         <!-- Price -->
                         <p class="price-from">From 000/night</p>
                         <!-- Rooms Text -->
-                        <div class="rooms-text">
+                        {{-- <div class="rooms-text">
                             <div class="line"></div>
                             <h4>Double Suite</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
-                        </div>
+                        </div> --}}
                         <!-- Book Room -->
                         <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
                     </div>
@@ -475,15 +475,15 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/9.jpg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/09.jpeg);"></div>
                         <!-- Price -->
                         <p class="price-from">From 000/night</p>
                         <!-- Rooms Text -->
-                        <div class="rooms-text">
+                        {{-- <div class="rooms-text">
                             <div class="line"></div>
                             <h4>Single Room</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
-                        </div>
+                        </div> --}}
                         <!-- Book Room -->
                         <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
                     </div>
