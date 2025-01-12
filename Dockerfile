@@ -30,8 +30,6 @@ COPY . .
 # Installer les dépendances de Laravel
 RUN composer install --optimize-autoloader --no-dev
 
-# Installer les dépendances frontend
-RUN npm install && npm run build
 
 # Donner les permissions nécessaires
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
