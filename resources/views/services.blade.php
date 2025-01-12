@@ -11,7 +11,7 @@
 
     <!-- Title -->
     <title>The Palatin - Hotel &amp; Resort Template</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Favicon -->
@@ -76,7 +76,7 @@
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index">HÔTEL</a></li>
                                                 <li><a href="canaan">Canaan Plage</a></li>
-                                                <li><a href="./accueil/services.html">Services</a></li>
+                                                <li><a href="canaanservices">Services</a></li>
                                                 <li><a href="./accueil/rooms.html">Rooms</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>
                                                 <li><a href="./accueil/contact.html">Contact</a></li>
@@ -345,12 +345,12 @@
                 <!-- Single Core Feature Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-core-feature mb-100">
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/bg-01.jpeg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/bg-05.jpeg);"></div>
                         <!-- Content -->
                         <div class="feature-content">
-                            <i class="icon-sunset"></i>
-                            <h3>Bien-être</h3>
-                            <p>Malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus. faucibus finibus.</p>
+                            <i class="icon-swimming-pool"></i>
+                            <h3>Piscine</h3>
+                            {{-- <p>Malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus. faucibus finibus.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -362,8 +362,8 @@
                         <!-- Content -->
                         <div class="feature-content">
                             <i class="icon-sunset"></i>
-                            <h3>Spa Center</h3>
-                            <p>Malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus. faucibus finibus.</p>
+                            <h3>Belle Plage</h3>
+                            {{-- <p>Malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus. faucibus finibus.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -375,8 +375,8 @@
                         <!-- Content -->
                         <div class="feature-content">
                             <i class="icon-island"></i>
-                            <h3>Lounge Bar</h3>
-                            <p>Malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus. faucibus finibus.</p>
+                            <h3>Détente</h3>
+                            {{-- <p>Malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus. faucibus finibus.</p> --}}
                         </div>
                     </div>
                 </div>
@@ -392,31 +392,31 @@
             <div class="row">
 
                 <!-- Single Service Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                {{-- <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="100ms">
                         <i class="icon-trekking"></i>
                         <h4>Bike Rentals</h4>
                         <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Single Service Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                {{-- <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="200ms">
                         <i class="icon-boat"></i>
                         <h4>Boat Trips</h4>
                         <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Single Service Area -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                {{-- <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="300ms">
-                        <i class="icon-restaurant"></i>
+                        <i class="icon-coffee"></i>
                         <h4>Restaurants</h4>
                         <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Single Service Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
@@ -439,7 +439,7 @@
                 <!-- Single Service Area -->
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="600ms">
-                        <i class="icon-sign"></i>
+                        <i class="icon-cocktail-1"></i>
                         <h4>Hiking</h4>
                         <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
                     </div>

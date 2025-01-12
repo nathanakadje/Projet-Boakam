@@ -76,7 +76,7 @@
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index">HÔTEL</a></li>
                                                 <li><a href="canaan">Canaan Plage</a></li>
-                                                <li><a href="./accueil/services.html">Services</a></li>
+                                                <li><a href="canaanservices">Services</a></li>
                                                 <li><a href="./accueil/rooms.html">Rooms</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>
                                                 <li><a href="./accueil/contact.html">Contact</a></li>
@@ -427,7 +427,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="section-heading text-center">
                         <div class="line-"></div>
-                        <h2>Choose a room</h2>
+                        <h2>Réservez votre chambre</h2>
                         <p>Découvrez nos chambres et suites élégamment décorées, alliant confort et style. Que vous préfériez une vue panoramique ou un espace intimiste, trouvez l’hébergement parfait pour votre séjour inoubliable.</p>
                     </div>
                 </div>
@@ -449,7 +449,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" class="book-room-btn btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Room</a>
                     </div>
                 </div> 
 
@@ -467,7 +467,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" class="book-room-btn btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Room</a>
                     </div>
                 </div>
 
@@ -485,7 +485,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" class="book-room-btn btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Room</a>
                     </div>
                 </div>
 
@@ -579,7 +579,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <!-- Active js -->
     <script src="./accueil/js/active.js"></script>
-    
+    <script src="./accueil/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
@@ -611,65 +611,65 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 //     });
 // });
 
-document.getElementById('reservationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+// document.getElementById('reservationForm').addEventListener('submit', function(e) {
+//     e.preventDefault();
 
-    // Réinitialiser les messages d'erreur avant une nouvelle soumission
-    document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
-    document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+//     // Réinitialiser les messages d'erreur avant une nouvelle soumission
+//     document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+//     document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
         
-    // Masquer la légende d'erreur au début
-    const errorLegend = document.getElementById('errorLegend');
-    errorLegend.classList.add('d-none');
-    // Récupération des données du formulaire
-    const formData = Object.fromEntries(new FormData(this));
+//     // Masquer la légende d'erreur au début
+//     const errorLegend = document.getElementById('errorLegend');
+//     errorLegend.classList.add('d-none');
+//     // Récupération des données du formulaire
+//     const formData = Object.fromEntries(new FormData(this));
 
-    fetch('{{ route("reservations.store") }}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            return response.json().then(errors => { throw errors; });
-        }
-    })
-    .then(data => {
-        if (data.success) {
-            toastr.success('Chambre réservée avec succès!');
-            $('#reservationModal').modal('hide');
-            this.reset();
-        }
-    })
-    .catch(errors => {
-        if (errors.errors) {
-            // Gestion des erreurs de validation
-            Object.keys(errors.errors).forEach(key => {
-                const field = document.querySelector(`[name="${key}"]`);
-                if (field) {
-                    // Ajouter la classe `is-invalid`
-                    field.classList.add('is-invalid');
+//     fetch('{{ route("reservations.store") }}', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+//         },
+//         body: JSON.stringify(formData)
+//     })
+//     .then(response => {
+//         if (response.ok) {
+//             return response.json();
+//         } else {
+//             return response.json().then(errors => { throw errors; });
+//         }
+//     })
+//     .then(data => {
+//         if (data.success) {
+//             toastr.success('Chambre réservée avec succès!');
+//             $('#reservationModal').modal('hide');
+//             this.reset();
+//         }
+//     })
+//     .catch(errors => {
+//         if (errors.errors) {
+//             // Gestion des erreurs de validation
+//             Object.keys(errors.errors).forEach(key => {
+//                 const field = document.querySelector(`[name="${key}"]`);
+//                 if (field) {
+//                     // Ajouter la classe `is-invalid`
+//                     field.classList.add('is-invalid');
 
-                    // Ajouter le message d'erreur sous le champ
-                    const feedback = field.nextElementSibling;
-                    if (feedback && feedback.classList.contains('invalid-feedback')) {
-                        feedback.textContent = errors.errors[key][0];
-                    }
-                }
-            });
-        } else {
-            // Afficher une alerte générique en cas d'erreur serveur
-            toastr.error('Erreur lors de la réservation.');
-        }
-          // Afficher la légende en cas d’erreur
-          errorLegend.classList.remove('d-none');
-    });
-});
+//                     // Ajouter le message d'erreur sous le champ
+//                     const feedback = field.nextElementSibling;
+//                     if (feedback && feedback.classList.contains('invalid-feedback')) {
+//                         feedback.textContent = errors.errors[key][0];
+//                     }
+//                 }
+//             });
+//         } else {
+//             // Afficher une alerte générique en cas d'erreur serveur
+//             toastr.error('Erreur lors de la réservation.');
+//         }
+//           // Afficher la légende en cas d’erreur
+//           errorLegend.classList.remove('d-none');
+//     });
+// });
     </script>
 </body>
 

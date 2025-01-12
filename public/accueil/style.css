@@ -1626,8 +1626,8 @@ img {
 } */
 
 .btn.palatin-btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+    background-color: #8f7455;
+    /* transform: translateX(2px); */
 }
 
 /* ====== The End ====== */

@@ -27,7 +27,7 @@ class ReservationController extends Controller
         'name.string' => 'Le nom doit être une chaîne de caractères.',
         'name.max' => 'Le nom ne doit pas dépasser 255 caractères.',
         'email.required' => 'L\'adresse email est obligatoire.',
-        'email.email' => 'L\'adresse email doit être valide.',
+        'email.email' => 'L\'adresse email doit n\'est pas valide.',
         'phone.required' => 'Le numéro de téléphone est obligatoire.',
         'phone.string' => 'Le numéro de téléphone doit être une chaîne de caractères.',
         'phone.min' => 'Le numéro de téléphone doit contenir au moins 10 caractères.',
