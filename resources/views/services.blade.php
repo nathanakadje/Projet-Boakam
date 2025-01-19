@@ -58,7 +58,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="./accueil/index.html">Home</a></li>
+                                    <li><a href="index">Home</a></li>
                                     <li><a href="canaan"> Canaan Plage</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
@@ -137,7 +137,7 @@
               {{ session('success') }}
           </div>
       @endif
-                <form id="reservationForm" action="{{ route('reservations.store') }}" method="POST" >
+                <form id="reservationForm" action="{{ route('stores.store') }}" method="POST" >
                     @csrf
                     <div class="alert alert-danger d-none" id="errorLegend" role="alert">
                         En cas d'erreur, veuillez nous contacter au 0779741238.

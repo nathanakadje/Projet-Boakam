@@ -137,7 +137,7 @@
               {{ session('success') }}
           </div>
       @endif
-                <form id="reservationForm" action="{{ route('reservations.store') }}" method="POST" >
+                <form id="reservationForm" action="{{ route('stores.store') }}" method="POST" >
                     @csrf
                     <div class="alert alert-danger d-none" id="errorLegend" role="alert">
                         En cas d'erreur, veuillez nous contacter au 0779741238.
@@ -559,7 +559,7 @@
                 <div class="col-12">
                     <div class="copywrite-text mt-30">
                         <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Akam</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Akam</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
@@ -582,7 +582,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!-- Active js -->
 <script src="./accueil/js/active.js"></script>
-
+{{-- <script src="./accueil/js/app.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
@@ -601,7 +601,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     // Récupération des données du formulaire
     const formData = Object.fromEntries(new FormData(this));
 
-    fetch('{{ route("reservations.store") }}', {
+    fetch('{{ route("stores.store") }}', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -646,12 +646,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
           // Afficher la légende en cas d’erreur
           errorLegend.classList.remove('d-none');
     });
-});
+}); 
 
 //     document.getElementById('reservationForm').addEventListener('submit', function(e) {
 //     e.preventDefault();
     
-//     fetch('{{ route("reservations.store") }}', {
+//     fetch('{{ route("stores.store") }}', {
 //         method: 'POST',
 //         headers: {
 //             'Content-Type': 'application/json',
@@ -673,10 +673,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 //     .catch(error => {
 //         toastr.error('Erreur lors de la réservation2');
 //     });
-// });
-// ************************************************************************
-
-    </script>
+// }); --}}
+</script>
 </body>
 
 </html>

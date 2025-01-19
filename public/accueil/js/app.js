@@ -12,7 +12,7 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     // Récupération des données du formulaire
     const formData = Object.fromEntries(new FormData(this));
 
-    fetch('{{ route("reservations.store") }}', {
+    fetch('{{ route("stores.store") }}', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

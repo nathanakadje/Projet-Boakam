@@ -137,7 +137,7 @@
               {{ session('success') }}
           </div>
       @endif
-                <form id="reservationForm" action="{{ route('reservations.store') }}" method="POST" >
+                <form id="reservationForm" action="{{ route('stores.store') }}" method="POST" >
                     @csrf
                     <div class="alert alert-danger d-none" id="errorLegend" role="alert">
                         En cas d'erreur, veuillez nous contacter au 0779741238.
@@ -220,7 +220,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">The Vacation Heaven</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Découvrez une escapade idyllique où le luxe rencontre la sérénité. Profitez d'un séjour inoubliable avec des chambres élégantes, des vues à couper le souffle, et des services exceptionnels pour des vacances parfaites.</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a>
+                                {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">A place to remember</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Vivez une expérience inoubliable dans notre hôtel, où élégance, confort et moments précieux se rencontrent. Un séjour qui restera gravé dans votre mémoire pour toujours.</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a>
+                                {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
                     </div>
@@ -258,7 +258,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">Enjoy your life</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Découvrez un havre de paix où confort et élégance se rencontrent. Profitez d’un séjour inoubliable dans nos hôtel et résidences, conçu pour offrir des expériences uniques et mémorables.</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a>
+                                {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
                     </div>
@@ -270,12 +270,12 @@
     <!-- ##### Hero Area End ##### -->
 
     <!-- ##### Book Now Area Start ##### -->
-    {{-- <div class="book-now-area">
+    <div class="book-now-area">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10">
                     <div class="book-now-form">
-                        <form action="#">
+                        {{-- <form action="#">
                             <!-- Form Group -->
                             <div class="form-group">
                                 <label for="select1">Check In</label>
@@ -331,12 +331,12 @@
 
                             <!-- Button -->
                             <button type="submit">Book Now</button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- ##### Book Now Area End ##### -->
 
     <!-- ##### About Us Area Start ##### -->
@@ -355,7 +355,7 @@
                             <h6><span class="fa fa-check"></span> Des séjours inoubliables</h6>
                             <h6><span class="fa fa-check"></span> Laissez-vous emporter par l'élégance et le charme intemporel</h6>
                         </div>
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
+                        {{-- <a href="#" class="btn palatin-btn mt-50">Read More</a> --}}
                     </div>
                 </div>
 
@@ -396,24 +396,24 @@
                             <div class="col-12 col-sm-4">
                                 <div class="pool-feature">
                                     <i class="icon-cocktail-1"></i>
-                                    <p>Pool Beachbar</p>
+                                    <p>Cocktail</p>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="pool-feature">
                                     <i class="icon-swimming-pool"></i>
-                                    <p>Infinity Pool</p>
+                                    <p>Piscine</p>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-4">
                                 <div class="pool-feature">
                                     <i class="icon-beach"></i>
-                                    <p>Sunbeds</p>
+                                    <p>Bancs solaires</p>
                                 </div>
                             </div>
                         </div>
                         <!-- Button -->
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
+                        {{-- <a href="#" class="btn palatin-btn mt-50">Read More</a> --}}
                     </div>
                 </div>
             </div>
@@ -559,7 +559,7 @@
                 <div class="col-12">
                     <div class="copywrite-text mt-30">
                         <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Akam</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Akam</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
@@ -589,7 +589,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 //          document.getElementById('reservationForm').addEventListener('submit', function(e) {
 //     e.preventDefault();
     
-//     fetch('{{ route("reservations.store") }}', {
+//     fetch('{{ route("stores.store") }}', {
 //         method: 'POST',
 //         headers: {
 //             'Content-Type': 'application/json',
@@ -612,65 +612,65 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 //     });
 // });
 
-// document.getElementById('reservationForm').addEventListener('submit', function(e) {
-//     e.preventDefault();
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-//     // Réinitialiser les messages d'erreur avant une nouvelle soumission
-//     document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
-//     document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+    // Réinitialiser les messages d'erreur avant une nouvelle soumission
+    document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+    document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
         
-//     // Masquer la légende d'erreur au début
-//     const errorLegend = document.getElementById('errorLegend');
-//     errorLegend.classList.add('d-none');
-//     // Récupération des données du formulaire
-//     const formData = Object.fromEntries(new FormData(this));
+    // Masquer la légende d'erreur au début
+    const errorLegend = document.getElementById('errorLegend');
+    errorLegend.classList.add('d-none');
+    // Récupération des données du formulaire
+    const formData = Object.fromEntries(new FormData(this));
 
-//     fetch('{{ route("reservations.store") }}', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-//         },
-//         body: JSON.stringify(formData)
-//     })
-//     .then(response => {
-//         if (response.ok) {
-//             return response.json();
-//         } else {
-//             return response.json().then(errors => { throw errors; });
-//         }
-//     })
-//     .then(data => {
-//         if (data.success) {
-//             toastr.success('Chambre réservée avec succès!');
-//             $('#reservationModal').modal('hide');
-//             this.reset();
-//         }
-//     })
-//     .catch(errors => {
-//         if (errors.errors) {
-//             // Gestion des erreurs de validation
-//             Object.keys(errors.errors).forEach(key => {
-//                 const field = document.querySelector(`[name="${key}"]`);
-//                 if (field) {
-//                     // Ajouter la classe `is-invalid`
-//                     field.classList.add('is-invalid');
+    fetch('{{ route("stores.store") }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return response.json().then(errors => { throw errors; });
+        }
+    })
+    .then(data => {
+        if (data.success) {
+            toastr.success('Chambre réservée avec succès!');
+            $('#reservationModal').modal('hide');
+            this.reset();
+        }
+    })
+    .catch(errors => {
+        if (errors.errors) {
+            // Gestion des erreurs de validation
+            Object.keys(errors.errors).forEach(key => {
+                const field = document.querySelector(`[name="${key}"]`);
+                if (field) {
+                    // Ajouter la classe `is-invalid`
+                    field.classList.add('is-invalid');
 
-//                     // Ajouter le message d'erreur sous le champ
-//                     const feedback = field.nextElementSibling;
-//                     if (feedback && feedback.classList.contains('invalid-feedback')) {
-//                         feedback.textContent = errors.errors[key][0];
-//                     }
-//                 }
-//             });
-//         } else {
-//             // Afficher une alerte générique en cas d'erreur serveur
-//             toastr.error('Erreur lors de la réservation.');
-//         }
-//           // Afficher la légende en cas d’erreur
-//           errorLegend.classList.remove('d-none');
-//     });
-// });
+                    // Ajouter le message d'erreur sous le champ
+                    const feedback = field.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = errors.errors[key][0];
+                    }
+                }
+            });
+        } else {
+            // Afficher une alerte générique en cas d'erreur serveur
+            toastr.error('Erreur lors de la réservation.');
+        }
+          // Afficher la légende en cas d’erreur
+          errorLegend.classList.remove('d-none');
+    });
+});
     </script>
 </body>
 
