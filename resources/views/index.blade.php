@@ -62,22 +62,23 @@
                                     <li><a href="./accueil/about-us.html">About Us</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
-                                            <li><a href="./accueil/index.html">Home</a></li>
-                                            <li><a href="./accueil/about-us.html">About Us</a></li>
-                                            <li><a href="./accueil/services.html">Services</a></li>
-                                            <li><a href="./accueil/rooms.html">Rooms</a></li>
-                                            <li><a href="./accueil/blog.html">News</a></li>
-                                            <li><a href="./accueil/contact.html">Contact</a></li>
-                                            <li><a href="./accueil/elements.html">Elements</a></li>
+                                            <li><a href="index">Hotel</a></li>
+                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
+                                           <li> <a href="canaan">Canaan Plage</a></li>
+                                            <li><a href="canaanservices"> Canaan Services</a></li>
+                                            <li><a href="canaanrooms"> Nos Chambres</a></li>
+                                            {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
+                                            <li><a href="./accueil/contact.html">Nos Contact</a></li>
+                                            {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
-                                    <li><a href="#">Mega Menu</a>
+                                    {{-- <li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index">HÔTEL</a></li>
                                                 <li><a href="canaan">Canaan Plage</a></li>
-                                                <li><a href="./accueil/services.html">Services</a></li>
-                                                <li><a href="./accueil/rooms.html">Rooms</a></li>
+                                                <li><a href="canaanservices">Services</a></li>
+                                                <li><a href="canaanrooms">Chambres</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>
                                                 <li><a href="./accueil/contact.html">Contact</a></li>
                                                 <li><a href="./accueil/elements.html">Elements</a></li>
@@ -110,8 +111,8 @@
                                                 <li><a href="./accueil/elements.html">Elements</a></li>
                                             </ul>
                                         </div>
-                                    </li>
-                                    <li><a href="./accueil/services.html">Services</a></li>
+                                    </li> --}}
+                                    {{-- <li><a href="canaanservices">Services</a></li> --}}
                                     <li><a href="./accueil/contact.html">Contact</a></li>
                                 </ul>
 
@@ -219,7 +220,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">The Vacation Heaven</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Découvrez une escapade idyllique où le luxe rencontre la sérénité. Profitez d'un séjour inoubliable avec des chambres élégantes, des vues à couper le souffle, et des services exceptionnels pour des vacances parfaites.</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a>
+                                {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
                     </div>
@@ -238,7 +239,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">A place to remember</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Vivez une expérience inoubliable dans notre hôtel, où élégance, confort et moments précieux se rencontrent. Un séjour qui restera gravé dans votre mémoire pour toujours.</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a>
+                                {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
                     </div>
@@ -257,7 +258,7 @@
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
                                 <h2 data-animation="fadeInUp" data-delay="500ms">Enjoy your life</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Découvrez un havre de paix où confort et élégance se rencontrent. Profitez d’un séjour inoubliable dans nos hôtel et résidences, conçu pour offrir des expériences uniques et mémorables.</p>
-                                <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a>
+                                {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
                     </div>
@@ -354,7 +355,7 @@
                             <h6><span class="fa fa-check"></span> Des séjours inoubliables</h6>
                             <h6><span class="fa fa-check"></span> Laissez-vous emporter par l'élégance et le charme intemporel</h6>
                         </div>
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
+                        {{-- <a href="#" class="btn palatin-btn mt-50">Read More</a> --}}
                     </div>
                 </div>
 
@@ -467,7 +468,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div>
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Book Room</a>
                     </div>
                 </div>
 
@@ -485,7 +486,7 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div>
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal"  class="book-room-btn btn palatin-btn">Book Room</a>
                     </div>
                 </div>
 

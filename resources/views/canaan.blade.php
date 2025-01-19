@@ -58,20 +58,21 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./accueil/index.html">Home</a></li>
-                                    <li><a href="./accueil/about-us.html">About Us</a></li>
+                                    <li class="active"><a href="index">Home</a></li>
+                                    <li><a href="canaanrooms">Room</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="./accueil/about-us.html">About Us</a></li>
-                                            <li><a href="./accueil/services.html">Services</a></li>
-                                            <li><a href="./accueil/rooms.html">Rooms</a></li>
-                                            <li><a href="./accueil/blog.html">News</a></li>
+                                            <li><a href="canaanrooms">Chambres</a></li>
+                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
+                                            <li><a href="canaanservices">Services</a></li>
+                                            {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
+                                            {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             <li><a href="./accueil/contact.html">Contact</a></li>
-                                            <li><a href="./accueil/elements.html">Elements</a></li>
+                                            {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
-                                    <li><a href="#">Mega Menu</a>
+                                    {{-- <li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index">HÔTEL</a></li>
@@ -110,7 +111,7 @@
                                                 <li><a href="./accueil/elements.html">Elements</a></li>
                                             </ul>
                                         </div>
-                                    </li>
+                                    </li> --}}
                                     <li><a href="canaanservices">Services</a></li>
                                     <li><a href="./accueil/contact.html">Contact</a></li>
                                 </ul>
@@ -439,9 +440,9 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="100ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/1.jpg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
                         <!-- Price -->
-                        <p class="price-from">From $150/night</p>
+                        <p class="price-from">From 000/night</p>
                         <!-- Rooms Text -->
                         {{-- <div class="rooms-text">
                             <div class="line"></div>
@@ -457,7 +458,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/08.jpeg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/008.jpeg);"></div>
                         <!-- Price -->
                         <p class="price-from">From 000/night</p>
                         <!-- Rooms Text -->
@@ -475,7 +476,7 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/09.jpeg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/009.jpeg);"></div>
                         <!-- Price -->
                         <p class="price-from">From 000/night</p>
                         <!-- Rooms Text -->

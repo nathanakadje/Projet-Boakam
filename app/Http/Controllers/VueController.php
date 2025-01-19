@@ -22,6 +22,10 @@ class VueController extends Controller
     {
         return view('services');
     } 
+    public function canaanroom()
+    {
+        return view('canaanrooms');
+    } 
 
     
 }

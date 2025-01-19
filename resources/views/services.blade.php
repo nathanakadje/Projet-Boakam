@@ -59,19 +59,20 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="./accueil/index.html">Home</a></li>
-                                    <li><a href="./accueil/about-us.html">About Us</a></li>
+                                    <li><a href="canaan"> Canaan Plage</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="./accueil/about-us.html">About Us</a></li>
-                                            <li><a href="./accueil/services.html">Services</a></li>
-                                            <li><a href="./accueil/rooms.html">Rooms</a></li>
-                                            <li><a href="./accueil/blog.html">News</a></li>
+                                            <li><a href="canaan"> Plage</a></li>
+                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
+                                            <li><a href="canaanrooms">Chambres</a></li>
+                                            {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
+                                            {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             <li><a href="./accueil/contact.html">Contact</a></li>
-                                            <li><a href="./accueil/elements.html">Elements</a></li>
+                                            {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
-                                    <li><a href="#">Mega Menu</a>
+                                    {{-- <li><a href="#">Mega Menu</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
                                                 <li><a href="index">HÔTEL</a></li>
@@ -110,8 +111,8 @@
                                                 <li><a href="./accueil/elements.html">Elements</a></li>
                                             </ul>
                                         </div>
-                                    </li>
-                                    <li class="active"><a href="./accueil/services.html">Services</a></li>
+                                    </li> --}}
+                                    {{-- <li class="active"><a href="./accueil/services.html">Services</a></li> --}}
                                     <li><a href="./accueil/contact.html">Contact</a></li>
                                 </ul>
 
