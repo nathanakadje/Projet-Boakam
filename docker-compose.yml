@@ -1,0 +1,86 @@
+version: '3.12'
+
+services:
+  # Service PHP + Laravel
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel_app
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    networks:
+      - laravel_network
+    depends_on:
+      - db
+
+  # Service PostgreSQL
+  db:
+    image: postgres:15-alpine
+    container_name: laravel_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - laravel_network
+
+networks:
+  laravel_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+
+# docker-compose.yml
+# version: '3'
+# services:
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - .:/var/www/html
+#     depends_on:
+#       - db
+#     environment:
+#       DB_CONNECTION: pgsql
+#       DB_HOST: db
+#       DB_PORT: 5433
+#       DB_DATABASE: hotel
+#       DB_USERNAME: postgres
+#       DB_PASSWORD: alma@7974
+
+#   db:
+#     image: postgres:13
+#     ports:
+#       - "5432:5432"
+#     environment:
+#       POSTGRES_DB: hotel
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: alma@7974
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+#     networks:
+#       - laravel_network
+# networks:
+#    laravel_network:
+#      driver: bridge
+# volumes:
+#   postgres_data:

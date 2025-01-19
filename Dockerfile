@@ -1,10 +1,48 @@
-# Configuration pour le Web Service sur Render.com
+# # Configuration pour le Web Service sur Render.com
 
 
-# Créer un Dockerfile à la racine de votre projet
-FROM php:8.2-apache
+# # Créer un Dockerfile à la racine de votre projet
+# FROM php:8.2-apache
 
-# Installation des dépendances
+# #FROM php:8.2-fpm
+
+# # Installer les dépendances système
+# RUN apt-get update && apt-get install -y \
+#     libpq-dev \
+#     libzip-dev \
+#     unzip \
+#     git \
+#     curl \
+#     && docker-php-ext-install pdo_pgsql zip
+    
+# # Activer le module Apache mod_rewrite
+# RUN a2enmod rewrite
+# # Copier les fichiers du projet dans l'image
+# # Définir le répertoire de travail
+# WORKDIR /var/www/html
+# COPY . .
+# # Installer Composer
+# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# # Installer Node.js pour compiler les assets front-end
+# RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
+
+# # Installer les dépendances de Laravel
+# RUN composer install
+
+# # Donner les permissions nécessaires
+# RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# # Exposer le port
+# EXPOSE 8000
+
+# # Commande pour démarrer Laravel
+
+# CMD ["apache2-foreground"]
+# Dockerfile
+FROM php:8.2-cli
+
+# Installation des dépendances système
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     zip \
@@ -15,45 +53,22 @@ RUN apt-get update && apt-get install -y \
 RUN docker-php-ext-install pdo pdo_pgsql
 
 # Installation de Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Configuration d'Apache
-RUN a2enmod rewrite
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
-
-# Configuration du répertoire de travail
+# Définition du répertoire de travail
 WORKDIR /var/www/html
 
-# Copie des fichiers du projet
+# Copie des fichiers de l'application
 COPY . .
 
-# Installation des dépendances
-RUN composer install --no-interaction --optimize-autoloader --no-dev
+# Installation des dépendances PHP
+RUN composer install
 
-# Permissions
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html/storage
+# Génération de la clé d'application
+#RUN php artisan key:generate
 
-# Variables d'environnement
-ENV APP_ENV=production
-ENV APP_DEBUG=false
+# Exposition du port
+EXPOSE 8000
 
-# Port
-EXPOSE 80
-
-# Commande de démarrage
-CMD ["apache2-foreground"]
-
-# Créer un fichier apache.conf
-<VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/html/public
-
-    <Directory /var/www/html/public>
-        AllowOverride All
-        Require all granted
-    </Directory>
-
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+# Commande pour démarrer le serveur
+CMD php artisan serve --host=0.0.0.0 --port=8000
