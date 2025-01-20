@@ -16,4 +16,6 @@ Route::get('/canaan', [VueController::class, 'chooseRoom']);
 Route::get('/index', [VueController::class, 'acceuil'])->name('index');
 Route::get('/canaanservices', [VueController::class, 'canaanservice']);
 Route::get('/canaanrooms', [VueController::class, 'canaanroom']);
+Route::get('/canaancontacts', [VueController::class, 'canaancontact']);
 Route::post('/stores', [ReservationController::class, 'store'])->name('stores.store');
+Route::post('/email', [ReservationController::class, 'emails'])->name('email.emails');

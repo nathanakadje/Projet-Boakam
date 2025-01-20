@@ -59,16 +59,16 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index">Home</a></li>
-                                    <li><a href="canaan"> Canaan Plage</a></li>
+                                    <li class="active"><a href="canaanrooms">Room</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
                                             <li><a href="canaan"> Plage</a></li>
-                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             <li><a href="canaanrooms">Chambres</a></li>
+                                            <li><a href="canaancontacts">Contact</a></li>
                                             {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
+                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
-                                            <li><a href="./accueil/contact.html">Contact</a></li>
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
@@ -112,8 +112,8 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    {{-- <li class="active"><a href="./accueil/services.html">Services</a></li> --}}
-                                    <li><a href="./accueil/contact.html">Contact</a></li>
+                                    <li><a href="canaan">Canaan Plage</a></li>
+                                    <li><a href="canaancontacts">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -204,7 +204,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/004.jpeg);">
+    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/004.JPG);">
         <div class="bradcumbContent">
             <h2>Services</h2>
         </div>
@@ -293,7 +293,7 @@
                             <h2>Services Exceptionnels</h2>
                         </div>
                         <p>Profitez d'un séjour confortable à petit prix, avec un accueil chaleureux et un service impeccable. Idéal pour les voyageurs en quête de simplicité et de convivialité. Réservez dès maintenant et vivez une expérience authentique et chaleureuse.</p>
-                        <a href="#" class="btn palatin-btn mt-50">Read More</a>
+                        {{-- <a href="#" class="btn palatin-btn mt-50">Read More</a> --}}
                     </div>
                 </div>
 
@@ -306,7 +306,7 @@
                             <div class="single-cool-fact">
                                 <div class="scf-text">
                                     <i class="icon-cocktail-1"></i>
-                                    <p>Pool Beachbar</p>
+                                    <p>Cocktail</p>
                                 </div>
                             </div>
                         </div>
@@ -316,7 +316,7 @@
                             <div class="single-cool-fact">
                                 <div class="scf-text">
                                     <i class="icon-swimming-pool"></i>
-                                    <p>Infinity Pool</p>
+                                    <p>Piscine</p>
                                 </div>
                             </div>
                         </div>
@@ -326,7 +326,7 @@
                             <div class="single-cool-fact">
                                 <div class="scf-text">
                                     <i class="icon-beach"></i>
-                                    <p>Sunbeds</p>
+                                    <p>Bancs solaires</p>
                                 </div>
                             </div>
                         </div>
@@ -423,8 +423,8 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="400ms">
                         <i class="icon-beach"></i>
-                        <h4>Massages</h4>
-                        <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
+                        <h4>Bancs solaires</h4>
+                        <p>Relaxez-vous dans un cadre paisible, entre confort et bien-être. Venez illuminer vos journées à notre plage !</p>
                     </div>
                 </div>
 
@@ -432,8 +432,8 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="500ms">
                         <i class="icon-boarding-pass"></i>
-                        <h4>Event Tikets</h4>
-                        <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
+                        <h4>Réglez vos séjours</h4>
+                        <p>Notre Plage accepte les paiements via Orange Money, Wave, et bien d'autres solutions mobiles sécurisées.</p>
                     </div>
                 </div>
 
@@ -441,8 +441,8 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-service-area mb-100 wow fadeInUp" data-wow-delay="600ms">
                         <i class="icon-cocktail-1"></i>
-                        <h4>Hiking</h4>
-                        <p>Nulla massa dui, posuere non erat in, eleifend mattis dui. Vivamus luctus luctus rhoncus. Donec sagittis nulla id finibus iaculis. Mauris odio tortor.</p>
+                        <h4> Boissons exquises</h4>
+                        <p>Découvrez des boissons rafraîchissants, laissez-vous séduire par des saveurs uniques. À savourer dans une ambiance chaleureuse et conviviale</p>
                     </div>
                 </div>
 
@@ -475,9 +475,10 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
+                        <h6 class="widget-title mb-5">Abonnez-vous à notre newsletter</h6>
+                        <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
+                            @csrf
+                            <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
@@ -512,7 +513,79 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
      
- 
+     <script>
+        // Afficher les messages de succès ou d'erreur
+        @if(Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
+   </script>
+   <script>
+     document.getElementById('reservationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+    
+        // Réinitialiser les messages d'erreur avant une nouvelle soumission
+        document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+            
+        // Masquer la légende d'erreur au début
+        const errorLegend = document.getElementById('errorLegend');
+        errorLegend.classList.add('d-none');
+        // Récupération des données du formulaire
+        const formData = Object.fromEntries(new FormData(this));
+    
+        fetch('{{ route("stores.store") }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.json().then(errors => { throw errors; });
+            }
+        })
+        .then(data => {
+            if (data.success) {
+                toastr.success('Chambre réservée avec succès!');
+                $('#reservationModal').modal('hide');
+                this.reset();
+            }
+        })
+        .catch(errors => {
+            if (errors.errors) {
+                // Gestion des erreurs de validation
+                Object.keys(errors.errors).forEach(key => {
+                    const field = document.querySelector(`[name="${key}"]`);
+                    if (field) {
+                        // Ajouter la classe `is-invalid`
+                        field.classList.add('is-invalid');
+    
+                        // Ajouter le message d'erreur sous le champ
+                        const feedback = field.nextElementSibling;
+                        if (feedback && feedback.classList.contains('invalid-feedback')) {
+                            feedback.textContent = errors.errors[key][0];
+                        }
+                    }
+                });
+            } else {
+                // Afficher une alerte générique en cas d'erreur serveur
+                toastr.error('Erreur lors de la réservation 1.');
+            }
+              // Afficher la légende en cas d’erreur
+              errorLegend.classList.remove('d-none');
+        });
+    });
+   </script>
 </body>
 
 </html>

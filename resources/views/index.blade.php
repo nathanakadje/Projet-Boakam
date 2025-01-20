@@ -548,8 +548,9 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="footer-widget-area mt-50">
                         <h6 class="widget-title mb-5">Abonnez-vous à notre newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Votre E-mail">
+                        <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
+                            @csrf
+                            <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
@@ -648,6 +649,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     });
 }); 
 
+
 //     document.getElementById('reservationForm').addEventListener('submit', function(e) {
 //     e.preventDefault();
     
@@ -674,6 +676,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 //         toastr.error('Erreur lors de la réservation2');
 //     });
 // }); --}}
+</script>
+<script>
+ @if(Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
 </script>
 </body>
 

@@ -64,11 +64,11 @@
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
                                             <li><a href="canaan">Plage</a></li>
-                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             <li><a href="canaanservices">Services</a></li>
-                                            {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
+                                            <li><a href="canaanrooms">Chambres</a></li>
+                                            <li><a href="canaancontacts">Contact</a></li>
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
-                                            <li><a href="./accueil/contact.html">Contact</a></li>
+                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
@@ -113,7 +113,7 @@
                                         </div>
                                     </li> --}}
                                     <li><a href="canaanservices">Services</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="canaancontacts">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -485,9 +485,10 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
+                        <h6 class="widget-title mb-5">Abonnez-vous à notre newsletter</h6>
+                        <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
+                            @csrf
+                            <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
@@ -522,7 +523,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-   
+   <script>
+        // Afficher les messages de succès ou d'erreur
+        @if(Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}");
+            @endforeach
+        @endif
+   </script>
    <script>
     //          document.getElementById('reservationForm').addEventListener('submit', function(e) {
     //     e.preventDefault();

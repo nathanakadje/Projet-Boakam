@@ -26,6 +26,10 @@ class VueController extends Controller
     {
         return view('canaanrooms');
     } 
-
+    
+    public function canaancontact()
+    {
+        return view('canaancontacts');
+    }
     
 }

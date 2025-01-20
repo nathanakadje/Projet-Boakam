@@ -64,11 +64,11 @@
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
                                             <li><a href="canaanrooms">Chambres</a></li>
-                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             <li><a href="canaanservices">Services</a></li>
-                                            {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
+                                            <li><a href="canaancontacts">Contact</a></li>
+                                            {{-- <li><a href="canaanrooms">Rooms</a></li> --}}
+                                            {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
-                                            <li><a href="./accueil/contact.html">Contact</a></li>
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
@@ -113,7 +113,7 @@
                                         </div>
                                     </li> --}}
                                     <li><a href="canaanservices">Services</a></li>
-                                    <li><a href="./accueil/contact.html">Contact</a></li>
+                                    <li><a href="canaancontacts">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -218,8 +218,8 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">The Vacation Heaven</h2>
-                                <p data-animation="fadeInUp" data-delay="700ms">Découvrez une escapade idyllique où le luxe rencontre la sérénité. Profitez d'un séjour inoubliable avec des chambres élégantes, des vues à couper le souffle, et des services exceptionnels pour des vacances parfaites.</p>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Superbe plage</h2>
+                                <p data-animation="fadeInUp" data-delay="700ms">Découvrez nos espaces et plages où le luxe rencontre la sérénité. Profitez d'un séjour inoubliable avec des chambres élégantes et des vues à couper le souffle pour des vacances parfaites.</p>
                                 {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
                         </div>
@@ -237,7 +237,7 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">A place to remember</h2>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Espace agréable</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Vivez une expérience inoubliable dans notre hôtel, où élégance, confort et moments précieux se rencontrent. Un séjour qui restera gravé dans votre mémoire pour toujours.</p>
                                 {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
@@ -256,7 +256,7 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">Enjoy your life</h2>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Profitez du séjour</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Découvrez un havre de paix où confort et élégance se rencontrent. Profitez d’un séjour inoubliable dans nos hôtel et résidences, conçu pour offrir des expériences uniques et mémorables.</p>
                                 {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
@@ -348,7 +348,7 @@
                     <div class="about-text text-center mb-100">
                         <div class="section-heading text-center">
                             <div class="line-"></div>
-                            <h2>A place to remember</h2>
+                            <h2>Des espaces détente</h2>
                         </div>
                         <p>Vivez une expérience inoubliable dans notre hôtel, où élégance, confort et moments précieux se rencontrent. Un séjour qui restera gravé dans votre mémoire pour toujours.</p>
                         <div class="about-key-text">
@@ -363,16 +363,16 @@
                     <div class="about-thumbnail homepage mb-100">
                         <!-- First Img -->
                         <div class="first-img wow fadeInUp" data-wow-delay="100ms">
-                            <img src="./accueil/img/bg-img/07.jpeg" alt="">
+                            <img src="./accueil/img/bg-img/pl.JPG" alt="">
                         </div>
                         <!-- Second Img -->
                         <div class="second-img wow fadeInUp" data-wow-delay="300ms">
                             <img src="./accueil/img/bg-img/06.jpeg" alt="">
                         </div>
                         <!-- Third Img-->
-                        {{-- <div class="third-img wow fadeInUp" data-wow-delay="500ms">
-                            <img src="./accueil/img/bg-img/05.jpeg" alt="">
-                        </div> --}}
+                                {{-- <div class="third-img wow fadeInUp" data-wow-delay="500ms">
+                                    <img src="./accueil/img/bg-img/05.jpeg" alt="">
+                                </div> --}}
                     </div>
                 </div>
             </div>
@@ -381,15 +381,15 @@
     <!-- ##### About Us Area End ##### -->
 
     <!-- ##### Pool Area Start ##### -->
-    <section class="pool-area section-padding-100 bg-img bg-fixed" style="background-image: url(./accueil/img/bg-img/004.jpeg);">
+    <section class="pool-area section-padding-100 bg-img bg-fixed" style="background-image: url(./accueil/img/bg-img/bg-01.jpeg);">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-12 col-lg-7">
                     <div class="pool-content text-center wow fadeInUp" data-wow-delay="300ms">
                         <div class="section-heading text-center white">
                             <div class="line-"></div>
-                            <h2>Infinity Pool</h2>
-                            <p>Découvrez l’élégance ultime avec notre piscine à débordement offrant une vue imprenable. Plongez dans une expérience inoubliable de détente et de raffinement.</p>
+                            <h2>Agréable Piscine</h2>
+                            <p>Découvrez l’élégance de notre piscine  offrant une vue imprenable. Plongez dans une expérience inoubliable de détente et de raffinement.</p>
                         </div>
 
                         <div class="row">
@@ -548,8 +548,9 @@
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="footer-widget-area mt-50">
                         <h6 class="widget-title mb-5">Abonnez-vous à notre newsletter</h6>
-                        <form action="#" method="post" class="subscribe-form">
-                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Votre E-mail">
+                        <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
+                            @csrf
+                            <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
@@ -585,6 +586,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
 
+    <script>
+        @if(Session::has('success'))
+                   toastr.success("{{ Session::get('success') }}");
+               @endif
+       
+               @if ($errors->any())
+                   @foreach ($errors->all() as $error)
+                       toastr.error("{{ $error }}");
+                   @endforeach
+               @endif
+       </script>
     <script>
 //          document.getElementById('reservationForm').addEventListener('submit', function(e) {
 //     e.preventDefault();

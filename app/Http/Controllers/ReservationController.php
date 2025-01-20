@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Newletter;
 use App\Models\Reservations;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -63,6 +64,8 @@ class ReservationController extends Controller
          // Gérer les exceptions et retourner une réponse JSON
          return response()->json(['success' => false, 'message' => 'Une erreur est survenue: ' . $e->getMessage()], 500);
      }
+
+
 //        $validatedData  = $request->validate([
 //           'name' => 'required|string|max:255',
 //             'email' => 'required|email',
@@ -89,5 +92,19 @@ class ReservationController extends Controller
     //         'error' => $e->getMessage()
     //     ], 500);
     // }
+}
+public function emails(Request $request){
+   
+    $validatedData = $request->validate([
+        'email' => 'required|email|unique:newletters,email',
+    ], [
+        'email.unique' => 'Cette adresse e-mail est déjà utilisée.',
+    ]);
+
+    Newletter::create($validatedData);
+
+    // Traitement des données du formulaire...
+
+    return redirect()->back()->with('success', 'Félicitation, vous êtes désormais membre de la newletter!');
 }
 }
