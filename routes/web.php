@@ -11,11 +11,13 @@ Route::get('/', function () {
     return redirect()->route('index');
 });
 
-Route::get('/canaan', [VueController::class, 'chooseRoom']);
+Route::get('/cana', [VueController::class, 'chooseRoom']);
 // Route::post('/reservation/store', [VueController::class, 'store'])->name('reservation.store');
 Route::get('/index', [VueController::class, 'acceuil'])->name('index');
 Route::get('/canaanservices', [VueController::class, 'canaanservice']);
 Route::get('/canaanrooms', [VueController::class, 'canaanroom']);
 Route::get('/canaancontacts', [VueController::class, 'canaancontact']);
-Route::post('/stores', [ReservationController::class, 'store'])->name('stores.store');
+Route::get('/contact', [VueController::class, 'contacts']);
 Route::post('/email', [ReservationController::class, 'emails'])->name('email.emails');
+Route::post('/stores', [ReservationController::class, 'store'])->name('stores.store');
+Route::post('/subjects', [ReservationController::class, 'subject'])->name('subjects.subject');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Newletter;
 use App\Models\Reservations;
+use App\Models\Souciclient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -106,5 +107,45 @@ public function emails(Request $request){
     // Traitement des données du formulaire...
 
     return redirect()->back()->with('success', 'Félicitation, vous êtes désormais membre de la newletter!');
+}
+
+public function subject(Request $request){
+   
+    $rules = [
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:50',
+        'subject' => 'required|string|max:50',
+        'message' => 'required|string|max:100',
+        ];
+
+       $messages = [
+        'name.required' => 'Le nom est obligatoire.',
+        'name.string' => 'Le nom doit être une chaîne de caractères.',
+        'name.max' => 'Le nom ne doit pas dépasser 255 caractères.',
+        'email.required' => 'L\'adresse email est obligatoire.',
+        'email.email' => 'L\'adresse email doit n\'est pas valide.',
+        'subject.required' => 'Sujet obligatoire (La raison de votre message).',
+        'message.required' => 'Message obligatoire (Plus de détail sur votre demande).',
+        'subject.max' => 'Vous avez atteint le nomre maximal.',
+        'message.max' => 'Vous avez atteint le nomre maximal.',
+        ] ;
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+ // Vérifier si la validation échoue
+     if ($validator->fails()) {
+         return response()->json([
+             'success' => false,
+             'errors' => $validator->errors()
+         ], 422);
+     }
+ 
+     // Récupérer les données validées
+     $validatedData = $validator->validated();
+
+    Souciclient::create($validatedData);
+
+    // Traitement des données du formulaire...
+
+    return redirect()->back()->with('success', 'Merci, Votre demande a bien été enregistrée!');
 }
 }

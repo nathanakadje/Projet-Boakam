@@ -63,7 +63,7 @@
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="canaan"> Plage</a></li>
+                                            <li><a href="cana"> Plage</a></li>
                                             <li><a href="canaanrooms">Chambres</a></li>
                                             <li><a href="canaancontacts">Contact</a></li>
                                             {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
@@ -112,7 +112,7 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="canaan">Canaan Plage</a></li>
+                                    <li><a href="cana">Cana Plage</a></li>
                                     <li><a href="canaancontacts">Contact</a></li>
                                 </ul>
 

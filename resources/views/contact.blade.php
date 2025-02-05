@@ -66,7 +66,7 @@
                                             <li><a href="cana">Plage</a></li>
                                             <li><a href="canaanrooms">Chambres</a></li>
                                             <li><a href="canaanservices">Services</a></li>
-                                            <li><a href="">Contact</a></li>
+                                            <li><a href="contact">Contact</a></li>
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
@@ -112,7 +112,7 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="canaan">Canaan Plage</a></li>
+                                    <li><a href="cana">Cana Plage</a></li>
                                     <li><a href="canaanrooms">Room</a></li>
                                 </ul>
 
@@ -309,17 +309,16 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Contact Form -->
-                    <form action="{{ route('subjects.subject') }}" method="post">
-                        @csrf
+                    <form action="#" method="post">
                         <div class="row">
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" name="name" placeholder="Your Name">
+                                <input type="text" class="form-control" name="text" placeholder="Your Name">
                             </div>
                             <div class="col-lg-4">
                                 <input type="email" class="form-control" name="email" placeholder="E-mail">
                             </div>
                             <div class="col-lg-4">
-                                <input type="text" class="form-control" name="subject" placeholder="Sujet de votre message">
+                                <input type="text" class="form-control" name="subject" placeholder="Subject">
                             </div>
                             <div class="col-12">
                                 <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
@@ -340,6 +339,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137" allowfullscreen></iframe> --}}
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.3931255646485!2d-4.429588725943543!3d5.2007435371217525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc02d6561d794dd%3A0x36855d71801e78fc!2sCana%20Plage!5e0!3m2!1sfr!2sci!4v1738703709057!5m2!1sfr!2sci" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
@@ -370,10 +370,9 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-3">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Abonnez-vous à notre newsletter</h6>
-                        <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
-                            @csrf
-                            <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
+                        <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
+                        <form action="#" method="post" class="subscribe-form">
+                            <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
@@ -383,7 +382,7 @@
                 <div class="col-12">
                     <div class="copywrite-text mt-30">
                         <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Akam Group</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
@@ -407,18 +406,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    <script src="./accueil/js/app.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-   <script>
-    // Afficher les messages de succès ou d'erreur
-    @if(Session::has('success'))
-        toastr.success("{{ Session::get('success') }}");
-    @endif
-
-    @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            toastr.error("{{ $error }}");
-        @endforeach
-    @endif
-</script>
 </body>
 
 </html>

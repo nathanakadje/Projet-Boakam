@@ -1560,19 +1560,99 @@ img {
       z-index: 100; /* Placez-le en dessous d'autres éléments si nécessaire */
   }
   
-
   #reservationModal {
     z-index: 1051;
 }
 
 /* Styles pour la modale */
-/* #reservationModal .modal-content {
-    border-radius: 15px;
-    border: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+/* Style des boutons */
+/* .btn.palatin-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
 } */
 
+/* Style des fenêtres modales */
+
+
+/* .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+} */
+
+/* 
+.modal-content {
+  background-color: #fff;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+} */
+
+/* .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+} */
+
+/* Fenêtre modale en pleine page avec un z-index élevé */
+.customModal {
+  display: none; 
+  position: relative; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+} 
+
+/* Contenu de la modale */
+.modal-contente {
+  position: absolute;
+  background-color: #fff;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #cb8670;
+}
+
+/* Bouton de fermeture */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* Styles pour le formulaire */
+.modal-content {
+  border: 2px solid #cb8670;
+}
 #reservationForm {
     background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
     padding: 20px;
@@ -1629,6 +1709,7 @@ img {
     background-color: #8f7455;
     /* transform: translateX(2px); */
 }
+/* Notification */
 .toast-success {
   background-color: #078825 !important; /* Vert */
 }

@@ -58,17 +58,17 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="./accueil/index.html">Home</a></li>
+                                    <li class="active"><a href="index">Home</a></li>
                                     <li><a href="./accueil/about-us.html">About Us</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Hotel</a></li>
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
-                                           <li> <a href="canaan">Canaan Plage</a></li>
-                                            <li><a href="canaanservices"> Canaan Services</a></li>
+                                           <li> <a href="cana">Cana Plage</a></li>
+                                            <li><a href="canaanservices"> Cana Services</a></li>
                                             <li><a href="canaanrooms"> Nos Chambres</a></li>
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
-                                            <li><a href="./accueil/contact.html">Nos Contact</a></li>
+                                            <li><a href="contact">Nos Contact</a></li>
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
                                         </ul>
                                     </li>
@@ -113,7 +113,7 @@
                                         </div>
                                     </li> --}}
                                     {{-- <li><a href="canaanservices">Services</a></li> --}}
-                                    <li><a href="./accueil/contact.html">Contact</a></li>
+                                    <li><a href="contact">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->

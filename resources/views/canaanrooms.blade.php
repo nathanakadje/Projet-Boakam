@@ -63,7 +63,7 @@
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="canaan">Plage</a></li>
+                                            <li><a href="cana">Plage</a></li>
                                             <li><a href="canaanservices">Services</a></li>
                                             <li><a href="canaanrooms">Chambres</a></li>
                                             <li><a href="canaancontacts">Contact</a></li>
@@ -415,8 +415,9 @@
                             <h6><span class="fa fa-check"></span> Un refrigirateur à votre disposition</h6>
                             <h6><span class="fa fa-check"></span> Profitez d’une vue panoramique sur la mer</h6>
                         </div>
-                        <div class="hotel-img">
+                        <div  class="hotel-img">
                             <img src="./accueil/img/bg-img/009.jpeg" alt="">
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -424,6 +425,81 @@
         </div>
     </section>
     <!-- ##### Hotels Area End ##### -->
+
+     <!-- ##### Rooms Area Start ##### -->
+     <section class="rooms-area section-padding-100-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <div class="section-heading text-center">
+                        <div class="line-"></div>
+                        <h2>Réservez votre chambre</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                <!-- Single Rooms Area -->
+                
+                <!-- Single Rooms Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Thumbnail -->
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
+                        <!-- Price -->
+                        <p class="price-from">From 000/night</p>
+                        <!-- Rooms Text -->
+                        <div class="rooms-text">
+                            <div class="line"></div>
+                            <h4>Double Suite</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                        </div>
+                        <!-- Book Room -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
+                    </div>
+                </div>
+
+             <!-- Single Rooms Area -->
+             <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
+                    <!-- Thumbnail -->
+                    <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
+                    <!-- Price -->
+                    <p class="price-from">From 000/night</p>
+                    <!-- Rooms Text -->
+                    <div class="rooms-text">
+                        <div class="line"></div>
+                        <h4>Double Suite</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                    </div>
+                    <!-- Book Room -->
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
+                </div>
+            </div>
+
+                <!-- Single Rooms Area -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
+                        <!-- Thumbnail -->
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
+                        <!-- Price -->
+                        <p class="price-from">From 000/night</p>
+                        <!-- Rooms Text -->
+                        <div class="rooms-text">
+                            <div class="line"></div>
+                            <h4>Double Suite</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                        </div>
+                        <!-- Book Room -->
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Rooms Area End ##### -->
 
     <!-- ##### Testimonial Area Start ##### -->
     {{-- <section class="testimonial-area section-padding-100 bg-img" style="background-image: url(./accueil/img/core-img/pattern.png);">

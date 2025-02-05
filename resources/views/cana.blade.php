@@ -218,7 +218,7 @@
                             <!-- Slide Content -->
                             <div class="hero-slides-content" data-animation="fadeInUp" data-delay="100ms">
                                 <div class="line" data-animation="fadeInUp" data-delay="300ms"></div>
-                                <h2 data-animation="fadeInUp" data-delay="500ms">Superbe plage</h2>
+                                <h2 data-animation="fadeInUp" data-delay="500ms">Bienvenue</h2>
                                 <p data-animation="fadeInUp" data-delay="700ms">Découvrez nos espaces et plages où le luxe rencontre la sérénité. Profitez d'un séjour inoubliable avec des chambres élégantes et des vues à couper le souffle pour des vacances parfaites.</p>
                                 {{-- <a href="#" class="btn palatin-btn mt-50" data-animation="fadeInUp" data-delay="900ms">Read More</a> --}}
                             </div>
@@ -450,10 +450,16 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Room</a>
+                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modal1">Détail</a>
+                        <div id="modal1" class="modal customModal">
+                            <div class="modal-contente">
+                              <span class="close-btn">&times;</span>
+                              <h4>Contenu 1</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
                     </div>
                 </div> 
-
                 <!-- Single Rooms Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
@@ -468,7 +474,14 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Room</a>
+                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modal2">Détail</a>
+                        <div id="modal2" class="modal customModal">
+                            <div class="modal-contente">
+                              <span class="close-btn">&times;</span>
+                              <h4>Contenu 2</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -486,7 +499,15 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn" data-bs-toggle="modal" data-bs-target="#reservationModal">Book Room</a>
+                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modal3">Détail</a>
+                        <div id="modal3" class="modal customModal">
+                            <div class="modal-contente">
+                              <span class="close-btn">&times;</span>
+                              <h4>Contenu 3</h4>
+                              <h6><span class="fa fa-check"></span> Salle de Bain agréable</h6>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -684,6 +705,71 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     });
 });
     </script>
+{{-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var readMoreButtons = document.querySelectorAll(".read-more-btn");
+        var modal = document.getElementById("customModal");
+        var modalText = document.getElementById("modalText");
+        var closeBtn = document.querySelector(".close-btn");
+
+        // Ouvrir la modale au clic sur "Read More"
+        readMoreButtons.forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                modalText.innerHTML = this.getAttribute("data-content");
+                modal.style.display = "flex"; // Affiche la modale
+            });
+        });
+
+        // Fermer la modale au clic sur le bouton "X"
+        closeBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Fermer la modale en cliquant en dehors
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+</script> --}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all read more buttons
+      const buttons = document.querySelectorAll('.btn');
+      const modals = document.querySelectorAll('.modal');
+      const closeButtons = document.querySelectorAll('.close-btn');
+
+      // Add click event to each button
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const modalId = this.getAttribute('data-modal');
+          const modal = document.getElementById(modalId);
+          modal.style.display = 'block';
+        });
+      });
+
+      // Add click event to close buttons
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const modal = this.closest('.modal');
+          modal.style.display = 'none';
+        });
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener('click', function(e) {
+        modals.forEach(modal => {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

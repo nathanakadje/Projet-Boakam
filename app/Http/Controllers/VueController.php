@@ -11,7 +11,7 @@ class VueController extends Controller
     //
     public function chooseRoom()
     {
-        return view('canaan');
+        return view('cana');
     }
 
     public function acceuil()
@@ -30,6 +30,10 @@ class VueController extends Controller
     public function canaancontact()
     {
         return view('canaancontacts');
+    }
+    public function contacts()
+    {
+        return view('contact');
     }
     
 }
