@@ -215,10 +215,10 @@
             <div class="row">
 
                 <!-- Single Contact Information -->
-                <div class="col-12 col-lg-4">
+                {{-- <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
-                            <h3>Jacqueville</h3>
+                            <h3>Aidjan</h3>
                             <p>Ahua non loin du Lycée Municipal.</p>
                         </div>
                         <!-- Single Contact Information -->
@@ -237,39 +237,39 @@
                             <p>yourmail@gmail.com</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Single Contact Information -->
-                <div class="col-12 col-lg-4">
-                    <div class="single-contact-information mb-100">
-                        {{-- <div class="section-text">
-                            <h3>Jacqueville</h3>
-                            <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p>
-                        </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
-                            <p>Address</p>
-                            <p>245 Principe Lane <br> </p>
-                        </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
-                            <p>Phone</p>
-                            <p>+225 0140262267</p>
-                        </div>
-                        <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
-                            <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
-                        </div> --}}
-                    </div>
-                </div>
+                </div> --}}
 
                 <!-- Single Contact Information -->
                 <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
+                            <h3>Abidjan</h3>
+                            {{-- <p>Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Integer tempus ligula sem.</p> --}}
+                        </div>
+                        <!-- Single Contact Information -->
+                        {{-- <div class="contact-content d-flex">
+                            <p>Address</p>
+                            <p>245 Principe Lane <br> </p>
+                        </div> --}}
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>Phone</p>
+                            <p>+225 07 79 74 12 38</p>
+                        </div>
+                        <!-- Single Contact Information -->
+                        <div class="contact-content d-flex">
+                            <p>E-mail</p>
+                            <p>christakadje20@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single Contact Information -->
+                {{-- <div class="col-12 col-lg-4">
+                    <div class="single-contact-information mb-100">
+                        <div class="section-text">
                             <h3>Jacqueville</h3>
-                            <p>Fusce blandit consequat elit non egestas. Donec tortor odio, consectetur eu justo ut.</p>
+                            <p>Ahua non loin du Lycée Municipal.</p>
                         </div>
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
@@ -279,15 +279,15 @@
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Phone</p>
-                            <p>+225 0140262267</p>
+                            <p>+225 0142667584</p>
                         </div>
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
+                            <p>christakadje20@gmail.com</p>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
@@ -355,15 +355,15 @@
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
                         <a href="#" class="d-block mb-5"><img src="./accueil/img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                        {{-- <p style="visibility: hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p> --}}
                     </div>
                 </div>
 
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="./accueil/img/bg-img/footer-map.png" alt="">
+                        {{-- <h6 class="widget-title mb-5">Find us on the map</h6>
+                        <img src="./accueil/img/bg-img/footer-map.png" alt=""> --}}
                     </div>
                 </div>
 
@@ -382,7 +382,7 @@
                 <div class="col-12">
                     <div class="copywrite-text mt-30">
                         <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Akam Group</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>

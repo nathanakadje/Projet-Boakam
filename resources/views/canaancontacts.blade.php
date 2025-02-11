@@ -66,7 +66,7 @@
                                             <li><a href="cana">Plage</a></li>
                                             <li><a href="canaanrooms">Chambres</a></li>
                                             <li><a href="canaanservices">Services</a></li>
-                                            <li><a href="">Contact</a></li>
+                                            {{-- <li><a href="">Contact</a></li> --}}
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
@@ -112,7 +112,7 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="canaan">Canaan Plage</a></li>
+                                    <li><a href="cana">Canaan Plage</a></li>
                                     <li><a href="canaanrooms">Room</a></li>
                                 </ul>
 
@@ -234,7 +234,7 @@
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
+                            <p>bokamtchemartin48@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -279,12 +279,12 @@
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Phone</p>
-                            <p>+225 0140262267</p>
+                            <p>+225 0779741238</p>
                         </div>
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
-                            <p>yourmail@gmail.com</p>
+                            <p>christakadje20@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -355,15 +355,15 @@
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
                         <a href="#" class="d-block mb-5"><img src="./accueil/img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p> --}}
                     </div>
                 </div>
 
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="./accueil/img/bg-img/footer-map.png" alt="">
+                        {{-- <h6 class="widget-title mb-5">Find us on the map</h6>
+                        <img src="./accueil/img/bg-img/footer-map.png" alt=""> --}}
                     </div>
                 </div>
 

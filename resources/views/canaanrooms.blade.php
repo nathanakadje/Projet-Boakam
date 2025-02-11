@@ -59,7 +59,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index">Home</a></li>
-                                    <li class="active"><a href="canaan">Canaan Plage</a></li>
+                                    <li class="active"><a href="cana">Canaan Plage</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
@@ -357,7 +357,7 @@
                     <div class="single-cool-fact mb-100 wow fadeInUp" data-wow-delay="900ms">
                         <div class="scf-text">
                             <i class="icon-restaurant"></i>
-                            <h2><span class="counter">15</span></h2>
+                            <h2><span class="counter">24</span></h2>
                             <p>Appartements</p>
                         </div>
                     </div>
@@ -446,14 +446,18 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/008.jpeg);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">20 000 FCFA</p>
                         <!-- Rooms Text -->
                         <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Double Suite</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                            <h4>Une Chambre</h4>
+                            <p><span class="fa fa-check"></span> Ecran plat</p>
+                            <p><span class="fa fa-check"></span> Climatisation</p>
+                            <p><span class="fa fa-check"></span> Salle de Bain</p>                   
+                            <p><span class="fa fa-check"></span> Espace de Travail</p>                                           
+
                         </div>
                         <!-- Book Room -->
                         <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
@@ -464,14 +468,17 @@
              <div class="col-12 col-md-6 col-lg-4">
                 <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
                     <!-- Thumbnail -->
-                    <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
+                    <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/Room3.JPG);"></div>
                     <!-- Price -->
-                    <p class="price-from">From 000/night</p>
+                    <p class="price-from">30 000 FCFA</p>
                     <!-- Rooms Text -->
                     <div class="rooms-text">
                         <div class="line"></div>
-                        <h4>Double Suite</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                        <h4>Une Chambre</h4>
+                        <p><span class="fa fa-check"></span> Ecran plat</p>                   
+                        <p><span class="fa fa-check"></span> Climatisation</p>
+                        <p><span class="fa fa-check"></span> Salle de Bain</p>                   
+                        <p><span class="fa fa-check"></span> Espace de Travail</p>                                           
                     </div>
                     <!-- Book Room -->
                     <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
@@ -482,14 +489,19 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/Room4.JPG);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">50 000 FCFA</p>
                         <!-- Rooms Text -->
                         <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Double Suite</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                            <h4> Une Suite</h4>
+                            <p><span class="fa fa-check"></span> Un Salon</p>
+                            <p><span class="fa fa-check"></span> Ecran plat</p>
+                            <p><span class="fa fa-check"></span> Climatisation</p>
+                            <p><span class="fa fa-check"></span> Une terrasse</p>                        
+                            <p><span class="fa fa-check"></span> Salle de Bain</p>                        
+                            <p><span class="fa fa-check"></span> Espace de Travail</p>                                           
                         </div>
                         <!-- Book Room -->
                         <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
@@ -546,15 +558,15 @@
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
                         <a href="#" class="d-block mb-5"><img src="./accueil/img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p> --}}
                     </div>
                 </div>
 
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="./accueil/img/bg-img/footer-map.png" alt="">
+                        {{-- <h6 class="widget-title mb-5">Find us on the map</h6>
+                        <img src="./accueil/img/bg-img/footer-map.png" alt=""> --}}
                     </div>
                 </div>
 
@@ -574,7 +586,7 @@
                 <div class="col-12">
                     <div class="copywrite-text mt-30">
                         <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Akam Group</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>

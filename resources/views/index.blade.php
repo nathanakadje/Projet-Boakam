@@ -59,7 +59,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="index">Home</a></li>
-                                    <li><a href="./accueil/about-us.html">About Us</a></li>
+                                    <li><a href="/about-us">About Us</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Hotel</a></li>
@@ -539,8 +539,8 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer-widget-area mt-50">
-                        <h6 class="widget-title mb-5">Find us on the map</h6>
-                        <img src="./accueil/img/bg-img/footer-map.png" alt="">
+                        {{-- <h6 class="widget-title mb-5">Find us on the map</h6>
+                        <img src="./accueil/img/bg-img/footer-map.png" alt=""> --}}
                     </div>
                 </div>
 
@@ -560,7 +560,7 @@
                 <div class="col-12">
                     <div class="copywrite-text mt-30">
                         <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Akam</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Akam Group</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                     </div>
                 </div>
