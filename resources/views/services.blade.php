@@ -167,7 +167,12 @@
                             <option value="double">Chambre Double</option>
                         </select>
                     </div> --}}
-
+                    <div class="mb-3">
+                        <label for="montant" class="form-label" style="width: 100%;">Montant de la chambre :</label>
+                            <input type="number" class="form-control" id="montant" name="montant" min="20000" step="5000" max="50000" placeholder="disponible: 20.000, 25.000, 30.000, 50.000">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    
                     <div class="mb-3">
                         <label for="check_in" class="form-label">Date d'arrivée</label>
                         <input type="date" class="form-control" id="check_in" name="check_in" >

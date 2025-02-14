@@ -159,14 +159,12 @@
                         <input type="tel" class="form-control" id="phone" placeholder=" Contact Ex: 07xxxxxxxx" name="phone" >
                         <div class="invalid-feedback"></div>
                     </div>
-                    {{-- <div class="mb-3">
-                        <label for="room_type" class="form-label">Type de chambre</label>
-                        <select class="form-control" id="room_type" name="room_type" style="width: 100%;" required>
-                            <option value="">Sélectionnez...</option>
-                            <option value="simple">Chambre Simple</option>
-                            <option value="double">Chambre Double</option>
-                        </select>
-                    </div> --}}
+                    
+                    <div class="mb-3">
+                        <label for="montant" class="form-label" style="width: 100%;">Montant de la chambre :</label>
+                            <input type="number" class="form-control" id="montant" name="montant" min="20000" step="5000" max="50000" placeholder="disponible: 20.000, 25.000, 30.000, 50.000">
+                        <div class="invalid-feedback"></div>
+                    </div>
 
                     <div class="mb-3">
                         <label for="check_in" class="form-label">Date d'arrivée</label>
@@ -179,7 +177,7 @@
                         <input type="date" class="form-control" id="check_out" name="check_out" >
                         <div class="invalid-feedback"></div>
                     </div>
-
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
@@ -450,8 +448,8 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modal1">Détail</a>
-                        <div id="modal1" class="modal customModal">
+                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modale1">Détail</a>
+                        <div id="modale1" class="modal customModal">
                             <div class="modal-contente">
                               <span class="close-btn">&times;</span>
                               <h4>Contenu 1</h4>
@@ -474,8 +472,8 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modal2">Détail</a>
-                        <div id="modal2" class="modal customModal">
+                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modale2">Détail</a>
+                        <div id="modale2" class="modal customModal">
                             <div class="modal-contente">
                               <span class="close-btn">&times;</span>
                               <h4>Contenu 2</h4>
@@ -499,8 +497,8 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
                         </div> --}}
                         <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modal3">Détail</a>
-                        <div id="modal3" class="modal customModal">
+                        <a href="#" class="book-room-btn btn palatin-btn" data-modal="modale3">Détail</a>
+                        <div id="modale3" class="modal customModal">
                             <div class="modal-contente">
                               <span class="close-btn">&times;</span>
                               <h4>Contenu 3</h4>
@@ -602,114 +600,87 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <!-- Active js -->
     <script src="./accueil/js/active.js"></script>
-    <script src="./accueil/js/app.js"></script>
+    {{-- <script src="./accueil/js/app.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
 
     <script>
-        @if(Session::has('success'))
-                   toastr.success("{{ Session::get('success') }}");
-               @endif
-       
-               @if ($errors->any())
-                   @foreach ($errors->all() as $error)
-                       toastr.error("{{ $error }}");
-                   @endforeach
-               @endif
-       </script>
-    <script>
-document.getElementById('reservationForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    // Réinitialiser les messages d'erreur avant une nouvelle soumission
-    document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
-    document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-        
-    // Masquer la légende d'erreur au début
-    const errorLegend = document.getElementById('errorLegend');
-    errorLegend.classList.add('d-none');
-    // Récupération des données du formulaire
-    const formData = Object.fromEntries(new FormData(this));
-
-    fetch('{{ route("stores.store") }}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        } else {
-            return response.json().then(errors => { throw errors; });
-        }
-    })
-    .then(data => {
-        if (data.success) {
-            toastr.success('Chambre réservée avec succès!');
-            $('#reservationModal').modal('hide');
-            this.reset();
-        }
-    })
-    .catch(errors => {
-        if (errors.errors) {
-            // Gestion des erreurs de validation
-            Object.keys(errors.errors).forEach(key => {
-                const field = document.querySelector(`[name="${key}"]`);
-                if (field) {
-                    // Ajouter la classe `is-invalid`
-                    field.classList.add('is-invalid');
-
-                    // Ajouter le message d'erreur sous le champ
-                    const feedback = field.nextElementSibling;
-                    if (feedback && feedback.classList.contains('invalid-feedback')) {
-                        feedback.textContent = errors.errors[key][0];
-                    }
-                }
-            });
-        } else {
-            // Afficher une alerte générique en cas d'erreur serveur
-            toastr.error('Erreur lors de la réservation.');
-        }
-          // Afficher la légende en cas d’erreur
-          errorLegend.classList.remove('d-none');
-    });
-});
-    </script>
-{{-- <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var readMoreButtons = document.querySelectorAll(".read-more-btn");
-        var modal = document.getElementById("customModal");
-        var modalText = document.getElementById("modalText");
-        var closeBtn = document.querySelector(".close-btn");
-
-        // Ouvrir la modale au clic sur "Read More"
-        readMoreButtons.forEach(function (button) {
-            button.addEventListener("click", function (event) {
-                event.preventDefault();
-                modalText.innerHTML = this.getAttribute("data-content");
-                modal.style.display = "flex"; // Affiche la modale
-            });
-        });
-
-        // Fermer la modale au clic sur le bouton "X"
-        closeBtn.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        // Fermer la modale en cliquant en dehors
-        window.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
+ 
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+    
+        // Réinitialiser les messages d'erreur avant une nouvelle soumission
+        document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+            
+        // Masquer la légende d'erreur au début
+        const errorLegend = document.getElementById('errorLegend');
+        errorLegend.classList.add('d-none');
+        // Récupération des données du formulaire
+        const formData = Object.fromEntries(new FormData(this));
+    
+        fetch('{{ route("stores.store") }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                return response.json().then(errors => { throw errors; });
             }
+        })
+        .then(data => {
+            if (data.success) {
+                toastr.success('Chambre réservée avec succès!');
+                $('#reservationModal').modal('hide');
+                this.reset();
+            }
+        })
+        .catch(errors => {
+            if (errors.errors) {
+                // Gestion des erreurs de validation
+                Object.keys(errors.errors).forEach(key => {
+                    const field = document.querySelector(`[name="${key}"]`);
+                    if (field) {
+                        // Ajouter la classe `is-invalid`
+                        field.classList.add('is-invalid');
+    
+                        // Ajouter le message d'erreur sous le champ
+                        const feedback = field.nextElementSibling;
+                        if (feedback && feedback.classList.contains('invalid-feedback')) {
+                            feedback.textContent = errors.errors[key][0];
+                        }
+                    }
+                });
+            } else {
+                // Afficher une alerte générique en cas d'erreur serveur
+                toastr.error('Erreur lors de la réservation.');
+            }
+              // Afficher la légende en cas d’erreur
+              errorLegend.classList.remove('d-none');
         });
-    });
-</script> --}}
+    }); 
+    </script>
 
-<script>
+    <script>
+     @if(Session::has('success'))
+                toastr.success("{{ Session::get('success') }}");
+            @endif
+    
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    toastr.error("{{ $error }}");
+                @endforeach
+            @endif
+    </script>
+
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Get all read more buttons
       const buttons = document.querySelectorAll('.btn');
@@ -743,7 +714,7 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
         });
       });
     });
-  </script>
+  </script> --}}
 </body>
 
 </html>

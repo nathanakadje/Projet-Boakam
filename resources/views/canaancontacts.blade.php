@@ -309,6 +309,11 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Contact Form -->
+                    @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
                     <form action="{{ route('subjects.subject') }}" method="post">
                         @csrf
                         <div class="row">

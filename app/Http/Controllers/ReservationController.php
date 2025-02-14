@@ -21,6 +21,7 @@ class ReservationController extends Controller
         'phone' => 'required|string|min:10',
         'check_in' => 'required|date|after_or_equal:today',
         'check_out' => 'required|date|after_or_equal:check_in',
+        'montant' => 'nullable',
     ];
 
     // Messages d'erreur personnalisés
@@ -146,6 +147,6 @@ public function subject(Request $request){
 
     // Traitement des données du formulaire...
 
-    return redirect()->back()->with('success', 'Merci, Votre demande a bien été enregistrée!');
+    return redirect()->back()->with('success', 'Merci, Votre demande a bien été prise en compte! Nous vous contacterons');
 }
 }

@@ -59,7 +59,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="index">Home</a></li>
-                                    <li><a href="/about-us">About Us</a></li>
+                                    <li><a href="/about-us">A Propos de nous</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Hotel</a></li>
@@ -159,14 +159,12 @@
                         <input type="tel" class="form-control" id="phone" placeholder=" Contact Ex: 07xxxxxxxx" name="phone" >
                         <div class="invalid-feedback"></div>
                     </div>
-                    {{-- <div class="mb-3">
-                        <label for="room_type" class="form-label">Type de chambre</label>
-                        <select class="form-control" id="room_type" name="room_type" style="width: 100%;" required>
-                            <option value="">Sélectionnez...</option>
-                            <option value="simple">Chambre Simple</option>
-                            <option value="double">Chambre Double</option>
-                        </select>
-                    </div> --}}
+                    
+                    <div class="mb-3">
+                        <label for="montant" class="form-label" style="width: 100%;">Montant de la chambre :</label>
+                            <input type="number" class="form-control" id="montant" name="montant" min="20000" step="5000" max="50000" placeholder="disponible: 20.000, 25.000, 30.000, 50.000">
+                        <div class="invalid-feedback"></div>
+                    </div>
 
                     <div class="mb-3">
                         <label for="check_in" class="form-label">Date d'arrivée</label>
@@ -179,7 +177,7 @@
                         <input type="date" class="form-control" id="check_out" name="check_out" >
                         <div class="invalid-feedback"></div>
                     </div>
-
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
@@ -428,7 +426,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="section-heading text-center">
                         <div class="line-"></div>
-                        <h2>Choose a room</h2>
+                        <h2>Reservez dès maintenant</h2>
                         <p>Découvrez nos chambres et suites élégamment décorées, alliant confort et style. Que vous préfériez une vue panoramique ou un espace intimiste, trouvez l’hébergement parfait pour votre séjour inoubliable.</p>
                     </div>
                 </div>
@@ -460,15 +458,15 @@
                         <!-- Thumbnail -->
                         <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/8.jpg);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">Chambre simple</p>
                         <!-- Rooms Text -->
                         <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Double Suite</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                            <h4>Chambre</h4>
+                            <p>Profitez d’un espace cosy avec un lit douillet, une connexion Wi-Fi haut débit et une salle de bain privative. Votre confort est notre priorité !</p>
                         </div>
                         <!-- Book Room -->
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Reservez</a>
                     </div>
                 </div>
 
@@ -478,15 +476,17 @@
                         <!-- Thumbnail -->
                         <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/9.jpg);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">Des Suites</p>
                         <!-- Rooms Text -->
                         <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Single Room</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
+                            <h4>Suite</h4>
+                            <p>Offrez-vous une expérience inoubliable dans notre somptueuse suite, alliant luxe et raffinement. Profitez d’un espace spacieux avec une vue imprenable, une salle de bain et un service personnalisé vous attend pour un séjour exceptionnel.
+
+                                Réservez dès maintenant.</p>
                         </div>
                         <!-- Book Room -->
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal"  class="book-room-btn btn palatin-btn">Book Room</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal"  class="book-room-btn btn palatin-btn">Reservez</a>
                     </div>
                 </div>
 
@@ -648,34 +648,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
           errorLegend.classList.remove('d-none');
     });
 }); 
-
-
-//     document.getElementById('reservationForm').addEventListener('submit', function(e) {
-//     e.preventDefault();
-    
-//     fetch('{{ route("stores.store") }}', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-//         },
-//         body: JSON.stringify(Object.fromEntries(new FormData(this)))
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         if(data.success) {
-//             toastr.success('Chambre réservée avec succès!');
-//             $('#reservationModal').modal('hide');
-//             this.reset();
-//         } else {
-//             toastr.error('Erreur lors de la réservation');
-            
-//         }
-//     })
-//     .catch(error => {
-//         toastr.error('Erreur lors de la réservation2');
-//     });
-// }); --}}
 </script>
 <script>
  @if(Session::has('success'))

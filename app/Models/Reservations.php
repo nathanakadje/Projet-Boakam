@@ -15,9 +15,9 @@ class Reservations extends Model
         'email',
         'phone',
         'check_in',
-        'check_out'
+        'check_out',
+        'montant'
     ];
-
     protected $casts = [
         'check_in' => 'date',
         'check_out' => 'date'
