@@ -59,14 +59,14 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="index">Home</a></li>
-                                    <li><a href="canaanrooms">Room</a></li>
+                                    <li><a href="cana-plage-rooms">Room</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="canaanrooms">Chambres</a></li>
-                                            <li><a href="canaanservices">Services</a></li>
-                                            <li><a href="canaancontacts">Contact</a></li>
-                                            {{-- <li><a href="canaanrooms">Rooms</a></li> --}}
+                                            <li><a href="cana-plage-rooms">Chambres</a></li>
+                                            <li><a href="cana-plage-services">Services</a></li>
+                                            <li><a href="cana-plage-contacts">Contact</a></li>
+                                            {{-- <li><a href="cana-plage-rooms">Rooms</a></li> --}}
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
@@ -112,8 +112,8 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="canaanservices">Services</a></li>
-                                    <li><a href="canaancontacts">Contact</a></li>
+                                    <li><a href="cana-plage-services">Services</a></li>
+                                    <li><a href="cana-plage-contacts">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -440,13 +440,13 @@
                         <!-- Thumbnail -->
                         <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/01.jpeg);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">20 000/nuit</p>
                         <!-- Rooms Text -->
-                        {{-- <div class="rooms-text">
+                        <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Deluxe Room</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
-                        </div> --}}
+                            <h4>Chambre simple</h4>
+                            <p>Offrez-vous une escapade dans notre chambre simple à 20 000 FCFA, où élégance et confort se rencontrent. Idéale pour un séjour reposant et raffiné. .</p>
+                        </div>
                         <!-- Book Room -->
                         <a href="#" class="book-room-btn btn palatin-btn" data-modal="modale1">Détail</a>
                         <div id="modale1" class="modal customModal">
@@ -464,13 +464,13 @@
                         <!-- Thumbnail -->
                         <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/008.jpeg);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">30 000/nuit</p>
                         <!-- Rooms Text -->
-                        {{-- <div class="rooms-text">
+                        <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Double Suite</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
-                        </div> --}}
+                            <h4>Chambre Simple</h4>
+                            <p>Chambre confortable à 30 000 FCFA : l'essentiel à petit prix. Idéal pour les voyageurs solo ou les séjours courts : confort et simplicité assurés..</p>
+                        </div>
                         <!-- Book Room -->
                         <a href="#" class="book-room-btn btn palatin-btn" data-modal="modale2">Détail</a>
                         <div id="modale2" class="modal customModal">
@@ -487,15 +487,15 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
                         <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/009.jpeg);"></div>
+                        <div class="bg-thumbnail bg-img" style="background-image: url(./accueil/img/bg-img/Room5.JPG);"></div>
                         <!-- Price -->
-                        <p class="price-from">From 000/night</p>
+                        <p class="price-from">50 000/nuit</p>
                         <!-- Rooms Text -->
-                        {{-- <div class="rooms-text">
+                        <div class="rooms-text">
                             <div class="line"></div>
-                            <h4>Single Room</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque.</p>
-                        </div> --}}
+                            <h4>Suite</h4>
+                            <p>Découvrez notre suite élégante, alliant confort et simplicité pour un séjour inoubliable. Avec son espace lumineux, son lit moelleux et ses équipements modernes.</p>
+                        </div>
                         <!-- Book Room -->
                         <a href="#" class="book-room-btn btn palatin-btn" data-modal="modale3">Détail</a>
                         <div id="modale3" class="modal customModal">
@@ -570,7 +570,7 @@
                         <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
                             @csrf
                             <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
-                            <button type="submit">Subscribe</button>
+                            <button type="submit">S'inscrire</button>
                         </form>
                     </div>
                 </div>
@@ -604,81 +604,81 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     
-
+    <script>
+        @if(Session::has('success'))
+                   toastr.success("{{ Session::get('success') }}");
+               @endif
+       
+               @if ($errors->any())
+                   @foreach ($errors->all() as $error)
+                       toastr.error("{{ $error }}");
+                   @endforeach
+               @endif
+       </script>
     <script>
  
-        document.getElementById('reservationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-    
-        // Réinitialiser les messages d'erreur avant une nouvelle soumission
-        document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
-        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
-            
-        // Masquer la légende d'erreur au début
-        const errorLegend = document.getElementById('errorLegend');
-        errorLegend.classList.add('d-none');
-        // Récupération des données du formulaire
-        const formData = Object.fromEntries(new FormData(this));
-    
-        fetch('{{ route("stores.store") }}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                return response.json().then(errors => { throw errors; });
-            }
-        })
-        .then(data => {
-            if (data.success) {
-                toastr.success('Chambre réservée avec succès!');
-                $('#reservationModal').modal('hide');
-                this.reset();
-            }
-        })
-        .catch(errors => {
-            if (errors.errors) {
-                // Gestion des erreurs de validation
-                Object.keys(errors.errors).forEach(key => {
-                    const field = document.querySelector(`[name="${key}"]`);
-                    if (field) {
-                        // Ajouter la classe `is-invalid`
-                        field.classList.add('is-invalid');
-    
-                        // Ajouter le message d'erreur sous le champ
-                        const feedback = field.nextElementSibling;
-                        if (feedback && feedback.classList.contains('invalid-feedback')) {
-                            feedback.textContent = errors.errors[key][0];
-                        }
+ document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Réinitialiser les messages d'erreur avant une nouvelle soumission
+    document.querySelectorAll('.invalid-feedback').forEach(el => el.textContent = '');
+    document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        
+    // Masquer la légende d'erreur au début
+    const errorLegend = document.getElementById('errorLegend');
+    errorLegend.classList.add('d-none');
+    // Récupération des données du formulaire
+    const formData = Object.fromEntries(new FormData(this));
+
+    fetch('{{ route("stores.store") }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return response.json().then(errors => { throw errors; });
+        }
+    })
+    .then(data => {
+        if (data.success) {
+            toastr.success('Chambre réservée avec succès!');
+            $('#reservationModal').modal('hide');
+            this.reset();
+        }
+    })
+    .catch(errors => {
+        if (errors.errors) {
+            // Gestion des erreurs de validation
+            Object.keys(errors.errors).forEach(key => {
+                const field = document.querySelector(`[name="${key}"]`);
+                if (field) {
+                    // Ajouter la classe `is-invalid`
+                    field.classList.add('is-invalid');
+
+                    // Ajouter le message d'erreur sous le champ
+                    const feedback = field.nextElementSibling;
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.textContent = errors.errors[key][0];
                     }
-                });
-            } else {
-                // Afficher une alerte générique en cas d'erreur serveur
-                toastr.error('Erreur lors de la réservation.');
-            }
-              // Afficher la légende en cas d’erreur
-              errorLegend.classList.remove('d-none');
-        });
-    }); 
+                }
+            });
+        } else {
+            // Afficher une alerte générique en cas d'erreur serveur
+            toastr.error('Erreur lors de la réservation.');
+        }
+          // Afficher la légende en cas d’erreur
+          errorLegend.classList.remove('d-none');
+    });
+}); 
     </script>
 
-    <script>
-     @if(Session::has('success'))
-                toastr.success("{{ Session::get('success') }}");
-            @endif
-    
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    toastr.error("{{ $error }}");
-                @endforeach
-            @endif
-    </script>
+   
 
 {{-- <script>
     document.addEventListener('DOMContentLoaded', function() {

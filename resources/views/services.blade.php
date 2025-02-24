@@ -59,13 +59,13 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index">Home</a></li>
-                                    <li class="active"><a href="canaanrooms">Room</a></li>
+                                    <li class="active"><a href="cana-plage-rooms">Room</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="cana"> Plage</a></li>
-                                            <li><a href="canaanrooms">Chambres</a></li>
-                                            <li><a href="canaancontacts">Contact</a></li>
+                                            <li><a href="cana-plage-hotel"> Plage</a></li>
+                                            <li><a href="cana-plage-rooms">Chambres</a></li>
+                                            <li><a href="cana-plage-contacts">Contact</a></li>
                                             {{-- <li><a href="./accueil/rooms.html">Rooms</a></li> --}}
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
@@ -112,8 +112,8 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="cana">Cana Plage</a></li>
-                                    <li><a href="canaancontacts">Contact</a></li>
+                                    <li><a href="cana-plage-hotel">Cana Plage</a></li>
+                                    <li><a href="cana-plage-contacts">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -211,7 +211,7 @@
     <!-- ##### Breadcumb Area Start ##### -->
     <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/04.jpeg);">
         <div class="bradcumbContent">
-            <h2>Services</h2>
+            <h2>Nos Services</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
@@ -484,7 +484,7 @@
                         <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
                             @csrf
                             <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
-                            <button type="submit">Subscribe</button>
+                            <button type="submit">S'inscrire</button>
                         </form>
                     </div>
                 </div>

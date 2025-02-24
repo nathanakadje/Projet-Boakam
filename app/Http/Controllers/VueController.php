@@ -11,7 +11,7 @@ class VueController extends Controller
     //
     public function chooseRoom()
     {
-        return view('cana');
+        return view('cana-plage-hotel');
     }
 
     public function acceuil()
@@ -24,12 +24,12 @@ class VueController extends Controller
     } 
     public function canaanroom()
     {
-        return view('canaanrooms');
+        return view('cana-plage-rooms');
     } 
     
     public function canaancontact()
     {
-        return view('canaancontacts');
+        return view('cana-plage-contacts');
     }
     public function contacts()
     {

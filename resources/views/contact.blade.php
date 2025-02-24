@@ -59,13 +59,13 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index">Home</a></li>
-                                    <li class="active"><a href="canaanservices">Services</a></li>
+                                    <li class="active"><a href="cana-plage-services">Services</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="cana">Plage</a></li>
-                                            <li><a href="canaanrooms">Chambres</a></li>
-                                            <li><a href="canaanservices">Services</a></li>
+                                            <li><a href="cana-plage-hotel">Plage</a></li>
+                                            <li><a href="cana-plage-rooms">Chambres</a></li>
+                                            <li><a href="cana-plage-services">Services</a></li>
                                             <li><a href="contact">Contact</a></li>
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
@@ -112,8 +112,8 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="cana">Cana Plage</a></li>
-                                    <li><a href="canaanrooms">Room</a></li>
+                                    <li><a href="cana-plage-hotel">Cana Plage</a></li>
+                                    <li><a href="cana-plage-rooms">Room</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -265,29 +265,29 @@
                 </div>
 
                 <!-- Single Contact Information -->
-                {{-- <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-4">
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
                             <h3>Jacqueville</h3>
-                            <p>Ahua non loin du Lycée Municipal.</p>
+                            {{-- <p>Ahua non loin du Lycée Municipal.</p> --}}
                         </div>
                         <!-- Single Contact Information -->
-                        <div class="contact-content d-flex">
+                        {{-- <div class="contact-content d-flex">
                             <p>Address</p>
                             <p>Lycée Municipal<br></p>
-                        </div>
+                        </div> --}}
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>Phone</p>
-                            <p>+225 0142667584</p>
+                            <p>+225 0140262267</p>
                         </div>
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
                             <p>E-mail</p>
-                            <p>christakadje20@gmail.com</p>
+                            <p>bokamtchemartin48@gmail.com</p>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
             </div>
         </div>
@@ -379,7 +379,7 @@
                         <h6 class="widget-title mb-5">Subscribe to our newsletter</h6>
                         <form action="#" method="post" class="subscribe-form">
                             <input type="email" name="subscribe-email" id="subscribeemail" placeholder="Your E-mail">
-                            <button type="submit">Subscribe</button>
+                            <button type="submit">S'inscrire</button>
                         </form>
                     </div>
                 </div>

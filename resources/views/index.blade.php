@@ -64,9 +64,9 @@
                                         <ul class="dropdown">
                                             <li><a href="index">Hotel</a></li>
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
-                                           <li> <a href="cana">Cana Plage</a></li>
-                                            <li><a href="canaanservices"> Cana Services</a></li>
-                                            <li><a href="canaanrooms"> Nos Chambres</a></li>
+                                           <li> <a href="cana-plage-hotel">Cana Plage</a></li>
+                                            <li><a href="cana-plage-services"> Cana Services</a></li>
+                                            <li><a href="cana-plage-rooms"> Nos Chambres</a></li>
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             <li><a href="contact">Nos Contact</a></li>
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
@@ -78,7 +78,7 @@
                                                 <li><a href="index">HÔTEL</a></li>
                                                 <li><a href="canaan">Canaan Plage</a></li>
                                                 <li><a href="canaanservices">Services</a></li>
-                                                <li><a href="canaanrooms">Chambres</a></li>
+                                                <li><a href="cana-plage-rooms">Chambres</a></li>
                                                 <li><a href="./accueil/blog.html">News</a></li>
                                                 <li><a href="./accueil/contact.html">Contact</a></li>
                                                 <li><a href="./accueil/elements.html">Elements</a></li>
@@ -532,7 +532,7 @@
                 <div class="col-12 col-lg-5">
                     <div class="footer-widget-area mt-50">
                         <a href="#" class="d-block mb-5"><img src="./accueil/img/core-img/logo.png" alt=""></a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. </p> --}}
                     </div>
                 </div>
 
@@ -551,7 +551,7 @@
                         <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
                             @csrf
                             <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
-                            <button type="submit">Subscribe</button>
+                            <button type="submit">S'inscrire</button>
                         </form>
                     </div>
                 </div>

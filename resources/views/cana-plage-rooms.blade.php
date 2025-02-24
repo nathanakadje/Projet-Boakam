@@ -59,14 +59,14 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="index">Home</a></li>
-                                    <li class="active"><a href="cana">Cana Plage</a></li>
+                                    <li class="active"><a href="cana-plage-hotel">Cana Plage</a></li>
                                     <li><a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index">Home</a></li>
-                                            <li><a href="cana">Plage</a></li>
-                                            <li><a href="canaanservices">Services</a></li>
-                                            <li><a href="canaanrooms">Chambres</a></li>
-                                            <li><a href="canaancontacts">Contact</a></li>
+                                            <li><a href="cana-plage-hotel">Plage</a></li>
+                                            <li><a href="cana-plage-services">Services</a></li>
+                                            <li><a href="cana-plage-rooms">Chambres</a></li>
+                                            <li><a href="cana-plage-contacts">Contact</a></li>
                                             {{-- <li><a href="./accueil/blog.html">News</a></li> --}}
                                             {{-- <li><a href="./accueil/about-us.html">About Us</a></li> --}}
                                             {{-- <li><a href="./accueil/elements.html">Elements</a></li> --}}
@@ -112,8 +112,8 @@
                                             </ul>
                                         </div>
                                     </li> --}}
-                                    <li><a href="canaanservices">Services</a></li>
-                                    <li><a href="canaancontacts">Contact</a></li>
+                                    <li><a href="cana-plage-services">Services</a></li>
+                                    <li><a href="cana-plage-contacts">Contact</a></li>
                                 </ul>
 
                                 <!-- Button -->
@@ -317,7 +317,7 @@
                     <div class="section-heading text-center white">
                         <div class="line-"></div>
                         <h2> Notre Parcours</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus faucibus finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris sceleri sque, at rutrum nulla dictum.</p>
+                        <p>Profitez d’un séjour inoubliable à Cana Plage, un hôtel de charme avec 24 chambres confortables, une magnifique piscine, et un cadre paradisiaque en bord de mer. Détendez-vous dans un environnement paisible, savourez une cuisine exquise et laissez-vous bercer par la brise marine.</p>
                     </div>
                 </div>
             </div>
@@ -394,9 +394,9 @@
                             <h6><span class="fa fa-check"></span> Téléviseur à écran plat </h6>
                             <h6><span class="fa fa-check"></span> Climatisation parfaite.</h6>
                         </div>
-                        <div class="hotel-img">
+                        {{-- <div class="hotel-img">
                             <img src="./accueil/img/bg-img/008.jpeg" alt="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- Single Hotel Info -->
@@ -407,9 +407,9 @@
                             <h6><span class="fa fa-check"></span> Service de chambre </h6>
                             <h6><span class="fa fa-check"></span> Matelas haut de gamme</h6>
                         </div>
-                        <div class="hotel-img">
+                        {{-- <div class="hotel-img">
                             <img src="./accueil/img/bg-img/01.jpeg" alt="">
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <!-- Single Hotel Info -->
@@ -420,9 +420,9 @@
                             <h6><span class="fa fa-check"></span> Un refrigirateur à votre disposition</h6>
                             <h6><span class="fa fa-check"></span> Profitez d’une vue panoramique sur la mer</h6>
                         </div>
-                        <div  class="hotel-img">
+                        {{-- <div  class="hotel-img">
                             <img src="./accueil/img/bg-img/009.jpeg" alt="">
-                        </div>
+                        </div> --}}
                         </div>
                     </div>
                 </div>
@@ -434,14 +434,14 @@
      <!-- ##### Rooms Area Start ##### -->
      <section class="rooms-area section-padding-100-0">
         <div class="container">
-            <div class="row justify-content-center">
+            {{-- <div class="row justify-content-center">
                 <div class="col-12 col-lg-6">
                     <div class="section-heading text-center">
                         <div class="line-"></div>
                         <h2>Réservez votre chambre</h2>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row justify-content-center">
 
@@ -465,7 +465,7 @@
 
                         </div>
                         <!-- Book Room -->
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réservez</a>
                     </div>
                 </div>
 
@@ -486,7 +486,7 @@
                         <p><span class="fa fa-check"></span> Espace de Travail</p>                                           
                     </div>
                     <!-- Book Room -->
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réservez</a>
                 </div>
             </div>
 
@@ -509,7 +509,7 @@
                             <p><span class="fa fa-check"></span> Espace de Travail</p>                                           
                         </div>
                         <!-- Book Room -->
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réserver</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#reservationModal" class="book-room-btn btn palatin-btn">Réservez</a>
                     </div>
                 </div>
                 </div>
@@ -582,7 +582,7 @@
                         <form action="{{ route('email.emails') }} " method="POST" class="subscribe-form">
                             @csrf
                             <input type="email" name="email" id="subscribeemail" placeholder="Votre E-mail">
-                            <button type="submit">Subscribe</button>
+                            <button type="submit">S'inscrire</button>
                         </form>
                     </div>
                 </div>
@@ -612,7 +612,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
    <!-- Active js -->
    <script src="./accueil/js/active.js"></script>
-   <script src="./accueil/js/app.js"></script>
+   {{-- <script src="./accueil/js/app.js"></script> --}}
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
