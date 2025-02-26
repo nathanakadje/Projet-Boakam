@@ -22,7 +22,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('reservations', function (Blueprint $table) {
-            //
             $table->dropColumn('montant');
         });
     }
