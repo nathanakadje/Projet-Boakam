@@ -4,12 +4,12 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\VueController;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//     return view('index');
-// });
 Route::get('/', function () {
-    return redirect()->route('index');
+    return view('index');
 });
+// Route::get('/', function () {
+//     return redirect()->route('index');
+// });
 
 Route::get('/cana-plage-hotel', [VueController::class, 'chooseRoom']);
 // Route::post('/reservation/store', [VueController::class, 'store'])->name('reservation.store');

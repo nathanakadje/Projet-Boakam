@@ -67,8 +67,12 @@ RUN composer install
 # Génération de la clé d'application
 #RUN php artisan key:generate
 
+# Permissions des dossiers de cache et stockage
+RUN chmod -R 775 storage bootstrap/cache && \
+    chown -R www-data:www-data storage bootstrap/cache
+    
 # Exposition du port
 EXPOSE 8000
 
 # Commande pour démarrer le serveur
-CMD php artisan serve --host=0.0.0.0 --port=8000
+CMD php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000

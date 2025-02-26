@@ -132,7 +132,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/bg-8.jpg);">
+    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/contactus2.jpg);">
         <div class="bradcumbContent">
             <h2>Contact</h2>
         </div>
