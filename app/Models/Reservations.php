@@ -22,4 +22,5 @@ class Reservations extends Model
         'check_in' => 'date',
         'check_out' => 'date'
     ];
+    protected $table = 'reservations';
 }
