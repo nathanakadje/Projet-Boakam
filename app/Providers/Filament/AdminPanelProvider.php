@@ -34,12 +34,16 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Resources\\ReservationResource\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+                \App\Filament\Resources\ReservationResource\Pages\ReservationDashboardPage::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Resources\\RessourcesResource\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
                 \App\Filament\Resources\RessourcesResource\Widgets\ReservationStatsWidget::class,
+                \App\Filament\Resources\RessourcesResource\Widgets\StayDurationChartWidget::class,
+                \App\Filament\Resources\RessourcesResource\Widgets\ReservationsChartWidget::class,
+                \App\Filament\Resources\RessourcesResource\Widgets\RevenueChartWidget::class,
                 
             ])
             ->middleware([
