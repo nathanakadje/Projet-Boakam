@@ -22,3 +22,8 @@ Route::get('/contact', [VueController::class, 'contacts']);
 Route::post('/email', [ReservationController::class, 'emails'])->name('email.emails');
 Route::post('/stores', [ReservationController::class, 'store'])->name('stores.store');
 Route::post('/subjects', [ReservationController::class, 'subject'])->name('subjects.subject');
+
+// Dans routes/web.php
+Route::get('/reservations/{reservation}/print', function (App\Models\Reservations $reservation) {
+    return view('reservations.print', compact('reservation'));
+})->name('reservations.print');
