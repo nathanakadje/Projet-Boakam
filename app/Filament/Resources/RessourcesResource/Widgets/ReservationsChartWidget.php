@@ -44,8 +44,8 @@ class ReservationsChartWidget extends ChartWidget
             [
                 'label' => 'Nombre de réservations',
                 'data' => $counts,
-                'backgroundColor' => '#f59e0b',
-                'borderColor' => '#d97706',
+                'backgroundColor' => 'rgba(255, 205, 86, 0.2)',
+                'borderColor' => 'rgb(255, 205, 86)',
                 'tension' => 0.3,
             ]
         ],

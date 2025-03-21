@@ -44,8 +44,8 @@ return [
         [
             'label' => 'Chiffre d\'affaires (€)',
             'data' => $totals,
-            'backgroundColor' => '#3b82f6',
-            'borderColor' => '#2563eb',
+            'backgroundColor' => 'rgba(153, 102, 255, 0.2)',
+            'borderColor' => 'rgb(153, 102, 255)',
             'fill' => true,
             'tension' => 0.3,
         ]

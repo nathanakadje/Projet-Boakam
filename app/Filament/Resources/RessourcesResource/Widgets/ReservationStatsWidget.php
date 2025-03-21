@@ -18,6 +18,7 @@ class ReservationStatsWidget extends BaseWidget
             Stat::make('Réservations totales', Reservations::count())
                 ->description('Nombre total de réservations')
                 ->descriptionIcon('heroicon-m-calendar')
+                ->color('info')
                 ->chart(
                     Reservations::select(DB::raw('DATE(created_at) as date'), DB::raw('COUNT(*) as count'))
                         ->whereDate('created_at', '>=', now()->subDays(30))
