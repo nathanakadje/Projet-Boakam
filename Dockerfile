@@ -92,10 +92,12 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     libzip-dev\
+    libpng-dev \
     libicu-dev
 
+
 # Installation des extensions PHP nécessaires
-RUN docker-php-ext-install pdo pdo_pgsql zip && docker-php-ext-install pdo pdo_pgsql intl
+RUN docker-php-ext-install pdo pdo_pgsql zip && docker-php-ext-install pdo gd pdo_pgsql intl 
 
 # Installation de Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
