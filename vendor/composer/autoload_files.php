@@ -40,6 +40,7 @@ return array(
     '9261e07cd92c53dcc971c7c88c176c04' => $vendorDir . '/danharrin/date-format-converter/src/helpers.php',
     '9720327d09ed9a4ba00c9b5071b71c7d' => $vendorDir . '/danharrin/date-format-converter/src/standards.php',
     '2ad94ea6f6f6013119e9abcf4e302a08' => $vendorDir . '/filament/forms/src/helpers.php',
+    '2cffec82183ee1cea088009cef9a6fc3' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     'b69d5f1f95cd1ed438c038b6cbcc45b5' => $vendorDir . '/filament/notifications/src/Testing/Autoload.php',
     '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     '801c31d8ed748cfa537fa45402288c95' => $vendorDir . '/psy/psysh/src/functions.php',

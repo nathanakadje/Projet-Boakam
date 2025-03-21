@@ -11,10 +11,12 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Collection;
+use App\Exports\ReservationsExport;
+use Illuminate\Database\Eloquent\Builder;
+use Maatwebsite\Excel\Facades\Excel;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ReservationResource extends Resource
@@ -56,6 +58,10 @@ class ReservationResource extends Resource
                 Forms\Components\TextInput::make('montant')
                     ->label('Montant')
                     ->numeric()
+                    ->minValue(20000)
+                    ->maxValue(50000)
+                    ->step(5000)
+                    ->maxLength(5)
                     ->required()
                     ->prefix('€'),
             ]);
@@ -149,7 +155,12 @@ class ReservationResource extends Resource
                     Tables\Actions\BulkAction::make('export')
                         ->label('Exporter')
                         ->icon('heroicon-o-document-arrow-down')
-                        ->action(fn (Collection $records) => /* Action d'export */null),
+                        ->action(function (Collection $records) {
+                            return Excel::download(
+                                new ReservationsExport($records),
+                                'reservations-' . now()->format('Y-m-d') . '.xlsx'
+                            );
+                        }),
                 ]),
             ]);
     }

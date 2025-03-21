@@ -144,7 +144,7 @@
                     </div>
                     <div class="mb-3">
                         {{-- <label for="name" class="form-label">Nom complet</label> --}}
-                        <input type="text" class="form-control" id="name" placeholder="Nom et Prénom" name="name" >
+                        <input type="text" class="form-control" id="name" placeholder="Nom et Prénom" name="name" maxlength="25" >
                         <div class="invalid-feedback"></div>
                     </div>
 
@@ -156,7 +156,7 @@
 
                     <div class="mb-3">
                         {{-- <label for="phone" class="form-label">Téléphone</label> --}}
-                        <input type="tel" class="form-control" id="phone" placeholder=" Contact Ex: 07xxxxxxxx" name="phone" >
+                        <input type="tel" class="form-control" id="phone" placeholder=" Contact Ex: 07xxxxxxxx" name="phone" maxlength="25" >
                         <div class="invalid-feedback"></div>
                     </div>
                     {{-- <div class="mb-3">
@@ -169,7 +169,7 @@
                     </div> --}}
                     <div class="mb-3">
                         <label for="montant" class="form-label" style="width: 100%;">Montant de la chambre :</label>
-                            <input type="number" class="form-control" id="montant" name="montant" min="20000" step="5000" max="50000" placeholder="disponible: 20.000, 25.000, 30.000, 50.000">
+                            <input type="number" class="form-control" id="montant" name="montant" min="20000" step="5000" max="50000" maxlength="5" placeholder="disponible: 20.000, 25.000, 30.000, 50.000">
                         <div class="invalid-feedback"></div>
                     </div>
                     

@@ -83,7 +83,7 @@
 # # Expose le port 80
 # EXPOSE 80
 
-FROM php:8.2-apache
+FROM php:8.3-apache
 
 # Installation des dépendances système
 RUN apt-get update && apt-get install -y \
@@ -91,10 +91,11 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
-    libzip-dev
+    libzip-dev\
+    libicu-dev
 
 # Installation des extensions PHP nécessaires
-RUN docker-php-ext-install pdo pdo_pgsql zip
+RUN docker-php-ext-install pdo pdo_pgsql zip && docker-php-ext-install pdo pdo_pgsql intl
 
 # Installation de Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
