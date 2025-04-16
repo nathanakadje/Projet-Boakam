@@ -16,7 +16,7 @@ class CreateAdminUser extends Command
      */
 
      protected $signature = 'admin:create 
-        {email=admin@example.com : Email of the admin user}
+        {email=admin2@example.com : Email of the admin user}
         {name=Admin : Name of the admin user}
     {password? : Password for the admin user (optional, default = random)}';
     

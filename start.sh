@@ -10,7 +10,7 @@ php artisan migrate --force
 
 
 # Créer un utilisateur admin
-php artisan admin:create admin@example.com Admin nathan2
+php artisan admin:create admin2@example.com Admin nathan2
 
 # Maintenir le processus en premier plan
 wait

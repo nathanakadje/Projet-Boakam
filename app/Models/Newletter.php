@@ -10,4 +10,7 @@ class Newletter extends Model
     protected $fillable = [
         'email'
     ];
+
+    protected $table = 'newletter';
+
 }

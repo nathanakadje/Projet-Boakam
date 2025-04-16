@@ -30,6 +30,21 @@ return [
         // ],
 
     ],
+/*
+    |--------------------------------------------------------------------------
+    | Auth Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the authentication guard and login page for Filament.
+    |
+    */
+
+    'auth' => [
+        'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
+        'pages' => [
+            'login' => \Filament\Http\Livewire\Auth\Login::class,
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
