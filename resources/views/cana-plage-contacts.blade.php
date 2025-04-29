@@ -132,7 +132,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/bg-8.jpg);">
+    <section class="breadcumb-area bg-img d-flex align-items-center justify-content-center" style="background-image: url(./accueil/img/bg-img/bgservice.jpg);">
         <div class="bradcumbContent">
             <h2>Nos Contacts</h2>
         </div>
@@ -269,7 +269,7 @@
                     <div class="single-contact-information mb-100">
                         <div class="section-text">
                             <h3>Jacqueville</h3>
-                            <p>Fusce blandit consequat elit non egestas. Donec tortor odio, consectetur eu justo ut.</p>
+                            <p>Ahua non loin du Lycée Municipal.</p>
                         </div>
                         <!-- Single Contact Information -->
                         <div class="contact-content d-flex">
