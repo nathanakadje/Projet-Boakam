@@ -79,7 +79,8 @@ services:
     image: christ903/thepalatin702:latest
     build:
       context: .
-    container_name: laravel_app
+      container_name: laravel_app
+      dockerfile: Dockerfile
     restart: unless-stopped
     volumes:
       - .:/var/www/html

@@ -118,7 +118,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Configurer les permissions
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache && chmod 600 acme.json
 
 # Expose le port spécifié par Render
 EXPOSE 80
