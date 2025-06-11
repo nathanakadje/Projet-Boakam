@@ -102,6 +102,7 @@ services:
       - "traefik.http.routers.laravel-http.rule=Host(`thepalatin.com`)"
       - "traefik.http.routers.laravel-http.entrypoints=web"
       - "traefik.http.routers.laravel-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
       - "traefik.http.services.laravel.loadbalancer.server.port=80"
     networks:
       - laravel_network
