@@ -1,3 +1,91 @@
+version: '3.8'
+
+services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.letsencrypt.acme.email=christakadje20@gmail.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json"
+      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./acme.json:/etc/traefik/acme.json
+    networks:
+      - laravel_network
+    restart: unless-stopped
+
+  # Service PHP + Laravel
+  app:
+    image: christ903/thepalatin37:latest
+    container_name: laravel_app
+    restart: unless-stopped
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=production
+      - APP_URL=https://thepalatin.com
+      - APP_DEBUG=false
+      - APP_KEY=${APP_KEY}
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.laravel.rule=Host(`thepalatin.com`) || Host(`www.thepalatin.com`)"
+      - "traefik.http.routers.laravel.entrypoints=websecure"
+      - "traefik.http.routers.laravel.tls.certresolver=letsencrypt"
+      - "traefik.http.services.laravel.loadbalancer.server.port=80"
+      # Redirection www vers non-www
+      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www\\.(.+)"
+      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://$${1}"
+      - "traefik.http.middlewares.www-redirect.redirectregex.permanent=true"
+      - "traefik.http.routers.laravel.middlewares=www-redirect"
+    networks:
+      - laravel_network
+    depends_on:
+      - db
+
+  # Service PostgreSQL
+  db:
+    image: postgres:15
+    container_name: laravel_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - laravel_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d ${DB_DATABASE}"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  laravel_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+
 # #Original 
 # version: '3.12'
 
@@ -47,90 +135,96 @@
 # volumes:
 #   postgres_data:
 #Fin
-version: '3.12'
+# version: '3.12'
 
-services:
-  traefik:
-    image: traefik:v2.10
-    container_name: traefik
-    command:
-      - "--api.dashboard=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
-      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
-      - "--certificatesresolvers.letsencrypt.acme.email=christakadje20@gmail.com"
-      - "--certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json"
-      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./acme.json:/etc/traefik/acme.json
-    labels:
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-    networks:
-      - laravel_network
-  # Service PHP + Laravel
-  app:
-    image: christ903/thepalatin307:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
-    restart: unless-stopped
-    volumes:
-      - .:/var/www/html
-    environment:
-      - APP_ENV=production
-      - APP_URL=https://thepalatin.com
-      - APP_DEBUG=false
-      - APP_KEY=${APP_KEY}
-      - DB_CONNECTION=pgsql
-      - DB_HOST=${DB_HOST}
-      - DB_PORT=5432
-      - DB_DATABASE=${DB_DATABASE}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.laravel.rule=Host(`thepalatin.com`)"
-      - "traefik.http.routers.laravel.entrypoints=websecure"
-      - "traefik.http.routers.laravel.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.laravel-http.rule=Host(`thepalatin.com`)"
-      - "traefik.http.routers.laravel-http.entrypoints=web"
-      - "traefik.http.routers.laravel-http.middlewares=redirect-to-https"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.services.laravel.loadbalancer.server.port=80"
-    networks:
-      - laravel_network
-    depends_on:
-      - db
+# services:
+#   traefik:
+#     image: traefik:v2.10
+#     container_name: traefik
+#     command:
+#       - "--api.dashboard=true"
+#       - "--providers.docker=true"
+#       - "--providers.docker.exposedbydefault=false"
+#       - "--entrypoints.web.address=:80"
+#       - "--entrypoints.websecure.address=:443"
+#       - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+#       - "--certificatesresolvers.letsencrypt.acme.email=christakadje20@gmail.com"
+#       - "--certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json"
+#       - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+#       - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+#     ports:
+#       - "80:80"
+#       - "443:443"
+#     volumes:
+#       - /var/run/docker.sock:/var/run/docker.sock
+#       - ./acme.json:/etc/traefik/acme.json
+#     networks:
+#       - laravel_network
+#   # Service PHP + Laravel
+#   app:
+#     image: christ903/thepalatin307:latest
+#     restart: unless-stopped
+#     volumes:
+#       - .:/var/www/html
+#     environment:
+#       - APP_ENV=production
+#       - APP_URL=https://thepalatin.com
+#       - APP_DEBUG=false
+#       - APP_KEY=${APP_KEY}
+#       - DB_CONNECTION=pgsql
+#       - DB_HOST=${DB_HOST}
+#       - DB_PORT=5432
+#       - DB_DATABASE=${DB_DATABASE}
+#       - DB_USERNAME=${DB_USERNAME}
+#       - DB_PASSWORD=${DB_PASSWORD}
+#     labels:
+#       - "traefik.enable=true"
+#       - "traefik.http.routers.laravel.rule=Host(`thepalatin.com`)"
+#       - "traefik.http.routers.laravel.entrypoints=websecure"
+#       - "traefik.http.routers.laravel.tls.certresolver=letsencrypt"
+#       - "traefik.http.services.laravel.loadbalancer.server.port=80"
+#     networks:
+#       - laravel_network
+#     depends_on:
+#       - db
 
-  # Service PostgreSQL
-  db:
-    image: postgres:15
-    container_name: laravel_db
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: ${DB_DATABASE}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    ports:
-      - 5432:5432
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - laravel_network
+#   # Service PostgreSQL
+#   db:
+#     image: postgres:15
+#     container_name: laravel_db
+#     restart: unless-stopped
+#     environment:
+#       POSTGRES_DB: ${DB_DATABASE}
+#       POSTGRES_USER: ${DB_USERNAME}
+#       POSTGRES_PASSWORD: ${DB_PASSWORD}
+#     ports:
+#       - 5432:5432
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+#     networks:
+#       - laravel_network
 
-networks:
-  laravel_network:
-    driver: bridge
+# networks:
+#   laravel_network:
+#     driver: bridge
 
-volumes:
-  postgres_data:
+# volumes:
+#   postgres_data:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Version original
 # version: '3.12'
@@ -183,43 +277,3 @@ volumes:
 
 
 
-
-
-# docker-compose.yml
-# version: '3'
-# services:
-#   app:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile
-#     ports:
-#       - "8000:8000"
-#     volumes:
-#       - .:/var/www/html
-#     depends_on:
-#       - db
-#     environment:
-#       DB_CONNECTION: pgsql
-#       DB_HOST: db
-#       DB_PORT: 5433
-#       DB_DATABASE: hotel
-#       DB_USERNAME: postgres
-#       DB_PASSWORD: alma@7974
-
-#   db:
-#     image: postgres:13
-#     ports:
-#       - "5432:5432"
-#     environment:
-#       POSTGRES_DB: hotel
-#       POSTGRES_USER: postgres
-#       POSTGRES_PASSWORD: alma@7974
-#     volumes:
-#       - postgres_data:/var/lib/postgresql/data
-#     networks:
-#       - laravel_network
-# networks:
-#    laravel_network:
-#      driver: bridge
-# volumes:
-#   postgres_data:
