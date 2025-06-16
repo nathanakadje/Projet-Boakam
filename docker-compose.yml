@@ -49,6 +49,7 @@ services:
       - "traefik.http.routers.laravel.entrypoints=websecure"
       - "traefik.http.routers.laravel.tls.certresolver=letsencrypt"
       - "traefik.http.services.laravel.loadbalancer.server.port=80"
+      - "traefik.http.routers.app.middlewares=redirect-to-https@file"
     networks:
       - laravel_network
 
