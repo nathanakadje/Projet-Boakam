@@ -1,11 +1,40 @@
-
-version: '3.8'
+version: "3.8"
 
 services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      - "--api.dashboard=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      - "--certificatesresolvers.letsencrypt.acme.email=christakadje20@gmail.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--providers.file.watch=true"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"  # Dashboard Traefik (optionnel)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/dokploy/traefik/acme.json:/etc/traefik/acme.json:rw
+      - /etc/dokploy/traefik/dynamic:/etc/traefik/dynamic:ro
+    networks:
+      - dokploy-network
+
   app:
     image: christ903/thepalatin307:latest
     container_name: laravel_app
     restart: unless-stopped
+    depends_on:
+      - traefik
     environment:
       - APP_ENV=production
       - APP_URL=https://thepalatin.com
@@ -23,11 +52,13 @@ services:
       - "traefik.http.routers.laravel.entrypoints=websecure"
       - "traefik.http.routers.laravel.tls.certresolver=letsencrypt"
       - "traefik.http.services.laravel.loadbalancer.server.port=80"
+      # Middleware si défini dans /etc/dokploy/traefik/dynamic/middlewares.yml
+      - "traefik.http.routers.laravel.middlewares=redirect-to-https@file"
     networks:
-      - laravel_network
+      - dokploy-network
 
 networks:
-  laravel_network:
+  dokploy-network:
     external: true
 
 # version: "3.8"
