@@ -1,10 +1,8 @@
 #!/bin/sh
 
 # Création si inexistant
-touch /etc/traefik/acme.json
-
-# Appliquer les bonnes permissions
-chmod 600 /etc/traefik/acme.json
+touch /etc/dokploy/traefik/acme.json
+chmod 600 /etc/dokploy/traefik/acme.json
 
 # Lancer traefik
 exec traefik "$@"

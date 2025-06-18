@@ -93,7 +93,8 @@ RUN apt-get update && apt-get install -y \
     git \
     libzip-dev\
     libpng-dev \
-    libicu-dev
+    libicu-dev \
+    postgresql-client
 
 
 # Installation des extensions PHP nécessaires

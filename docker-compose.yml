@@ -4,6 +4,7 @@ services:
   traefik:
     image: traefik:v2.10
     container_name: traefik
+    entrypoint: ["/entrypoint.sh"]
     restart: unless-stopped
     command:
       - "--api.dashboard=true"
@@ -13,10 +14,10 @@ services:
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
       - "--certificatesresolvers.letsencrypt.acme.email=christakadje20@gmail.com"
-      - "--certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/etc/dokploy/traefik/dynamic/acme.json"
       - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
       - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--providers.file.directory=/etc/dokploy/traefik/dynamic"
       - "--providers.file.watch=true"
     ports:
       - "80:80"
@@ -24,8 +25,8 @@ services:
       - "8080:8080"  # Dashboard Traefik (optionnel)
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /etc/dokploy/traefik/acme.json:/etc/traefik/acme.json:rw
-      - /etc/dokploy/traefik/dynamic:/etc/traefik/dynamic:ro
+      - /etc/dokploy/traefik/dynamic/acme.json:/etc/dokploy/traefik/acme.json:rw
+      - /etc/dokploy/traefik/dynamic:/etc/dokploy/traefik/dynamic:ro
     networks:
       - dokploy-network
 
