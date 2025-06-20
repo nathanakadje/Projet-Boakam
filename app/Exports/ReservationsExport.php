@@ -47,7 +47,6 @@ class ReservationsExport implements FromCollection, WithHeadings, WithMapping, S
             $reservation->phone,
             $reservation->check_in->format('d/m/Y'),
             $reservation->check_out->format('d/m/Y'),
-            $reservation->duration,
             number_format($reservation->montant, 2, ',', ' ') . ' €',
             $reservation->created_at->format('d/m/Y H:i'),
         ];
